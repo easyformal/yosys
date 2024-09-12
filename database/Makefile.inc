@@ -1,0 +1,9 @@
+OBJS += database/baseobject.o
+OBJS += database/instance.o
+OBJS += database/instport.o
+OBJS += database/library.o
+OBJS += database/designset.o
+OBJS += database/module.o
+OBJS += database/net.o
+OBJS += database/port.o
+OBJS += database/design.o
