@@ -591,6 +591,8 @@ Q =
 S =
 endif
 
+$(eval $(call add_include_file,database/database.h))
+
 $(eval $(call add_include_file,kernel/binding.h))
 $(eval $(call add_include_file,kernel/bitpattern.h))
 $(eval $(call add_include_file,kernel/cellaigs.h))
@@ -717,6 +719,8 @@ include $(YOSYS_SRC)/backends/rtlil/Makefile.inc
 include $(YOSYS_SRC)/techlibs/common/Makefile.inc
 
 endif
+
+include $(YOSYS_SRC)/database/Makefile.inc
 
 ifeq ($(LINK_ABC),1)
 OBJS += $(PROGRAM_PREFIX)yosys-libabc.a
