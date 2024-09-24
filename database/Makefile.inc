@@ -7,3 +7,5 @@ OBJS += database/module.o
 OBJS += database/net.o
 OBJS += database/port.o
 OBJS += database/design.o
+OBJS += database/yosysdb.o
+OBJS += database/database_util.o

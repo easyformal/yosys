@@ -22,16 +22,20 @@ public:
     Module(const std::string &name);
     ~Module();
 
+    const std::string &name() const;
+
     void add(Net *net);
     void add(NetBus *netbus);
     void add(Port *port);
     void add(PortBus *portbus);
-    void addInstance(Instance *inst);
-    void addInstPort(InstPort *inst_port);
+    void add(Instance *inst);
+    void add(InstPort *inst_port);
 
     const std::unordered_map<std::string, Net *> &nets() const;
+    const std::unordered_map<std::string, NetBus *> &netbus() const;
 
     const std::unordered_map<std::string, Port *> &ports() const;
+    const std::unordered_map<std::string, PortBus *> &portbus() const;
 
     const std::unordered_map<std::string, InstPort *> &inst_ports() const;
 
@@ -42,7 +46,9 @@ private:
     Library *_library;
 
     std::unordered_map<std::string, Net*> _nets;
+    std::unordered_map<std::string, NetBus*> _netbus;
     std::unordered_map<std::string, Port*> _ports;
+    std::unordered_map<std::string, PortBus*> _portbus;
     std::unordered_map<std::string, InstPort*> _inst_ports;
     std::unordered_map<std::string, Instance*> _instances;
 

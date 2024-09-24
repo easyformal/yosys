@@ -13,7 +13,9 @@ class InstPort
 {
 public:
     InstPort();
+
     Module *module() const;
+    void setModule(Module *module);
 
     Port *port() const;
 

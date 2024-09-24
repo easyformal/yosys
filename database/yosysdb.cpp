@@ -11,20 +11,25 @@
 #include "instport.h"
 #include <plog/Log.h>
 
+#include "database_util.h"
+
 YosysImporter::YosysImporter()
 {
 
 }
 
+
 DataBase::Library *YosysImporter::import(Yosys::RTLIL::Design *design, const char *library_name)
 {
     if (design == nullptr || library_name == nullptr) return nullptr;
     DataBase::Library *work_lib = new DataBase::Library(library_name);
-    PLOGI << "import yosys design";
+    Yosys::log("import yosys design\n");
 
     for (const auto &module : design->modules().to_vector()) {
         importModule(module, work_lib);
     }
+
+    DatabaseUtil::print_stat(work_lib);
     return work_lib;
 }
 
@@ -35,7 +40,7 @@ void YosysImporter::importModule(Yosys::RTLIL::Module *yosys_module, DataBase::L
     hashlib::dict<Yosys::RTLIL::SigBit, Yosys::RTLIL::SigBit> driver_map;
 
     std::string module_name = Yosys::RTLIL::unescape_id(yosys_module->name);
-    PLOGI << "module : " << module_name;
+    Yosys::log("module : %s\n", module_name.c_str());
 
     Yosys::SigMap active_sigmap;
     active_sigmap.set(yosys_module);
@@ -57,14 +62,14 @@ void YosysImporter::importModule(Yosys::RTLIL::Module *yosys_module, DataBase::L
         importConn(it->first, it->second, new_mod, active_sigmap);
     }
 
-    // instance
-    for (auto cell : yosys_module->cells().to_vector())
-    {
-        PLOGI << "instance : " << cell->name.c_str();
+    // // instance
+    // for (auto cell : yosys_module->cells().to_vector())
+    // {
+    //     Yosys::log("instance : %s\n", cell->name.c_str());
 
-        DataBase::Instance *new_inst = new DataBase::Instance(cell->name.c_str(), new_mod);
-        new_mod->addInstance(new_inst);
-    }
+    //     DataBase::Instance *new_inst = new DataBase::Instance(cell->name.c_str(), new_mod);
+    //     new_mod->add(new_inst);
+    // }
 
     active_sigmap.clear();
     library->add(new_mod);
@@ -73,10 +78,10 @@ void YosysImporter::importModule(Yosys::RTLIL::Module *yosys_module, DataBase::L
 void YosysImporter::importCell(Yosys::RTLIL::Cell *cell, DataBase::Module *module, const Yosys::SigMap &sigmap)
 {
     std::string cell_name = Yosys::RTLIL::unescape_id(cell->name);
-    PLOGI << "instance : " << cell_name;
+    Yosys::log("instance : %s\n", cell_name.c_str());
 
     DataBase::Instance *new_inst = new DataBase::Instance(cell_name, module);
-    module->addInstance(new_inst);
+    module->add(new_inst);
 }
 
 void YosysImporter::importWire(Yosys::RTLIL::Wire *wire, DataBase::Module *module, const Yosys::SigMap &sigmap, hashlib::dict<Yosys::RTLIL::SigBit, std::vector<Yosys::RTLIL::SigBit> > &load_map, hashlib::dict<Yosys::RTLIL::SigBit, Yosys::RTLIL::SigBit> &driver_map)
@@ -95,13 +100,13 @@ void YosysImporter::importNet(Yosys::RTLIL::Wire *wire, DataBase::Module *module
     int is_signed = wire->is_signed;
 
     if (wire->width <= 1) {
-        PLOGI << "add net : " << wire_name;
+        Yosys::log("add net : %s\n", wire_name.c_str());
         DataBase::Net *new_net = new DataBase::Net(wire_name, module);
         new_net->setIsSigned(is_signed);
         module->add(new_net);
     }
     else {
-        PLOGI << "add netbus:" << wire_name;
+        Yosys::log("add netbus:%s\n", wire_name.c_str());
 
         DataBase::NetBus *new_netbus = new DataBase::NetBus(wire_name, module);
         Yosys::RTLIL::SigSpec sigspec = sigmap(wire);
@@ -113,7 +118,7 @@ void YosysImporter::importNet(Yosys::RTLIL::Wire *wire, DataBase::Module *module
             new_net->setIsSigned(is_signed);
             module->add(new_net);
             new_netbus->add(new_net);
-            PLOGI << "  net:" << name;
+            Yosys::log("  net:%s\n", name.c_str());
         }
         module->add(new_netbus);
     }
@@ -140,7 +145,7 @@ void YosysImporter::importPort(Yosys::RTLIL::Wire *wire, DataBase::Module *modul
     int is_signed = wire->is_signed;
 
     if (wire->width <= 1) {
-        PLOGI << "add port:" << wire_name;
+        Yosys::log("add port:%s\n", wire_name.c_str());
         DataBase::Port *new_port = new DataBase::Port(wire_name, dir, module);
         new_port->setIsSigned(is_signed);
         new_port->setId(port_id);
@@ -153,7 +158,7 @@ void YosysImporter::importPort(Yosys::RTLIL::Wire *wire, DataBase::Module *modul
         //        }
     }
     else {
-        PLOGI << "add portbus:" << wire_name;
+        Yosys::log("add portbus:%s\n", wire_name.c_str());
 
         DataBase::PortBus *new_portbus = new DataBase::PortBus(wire_name, dir, module);
         Yosys::RTLIL::SigSpec sigspec = sigmap(wire);
@@ -166,7 +171,7 @@ void YosysImporter::importPort(Yosys::RTLIL::Wire *wire, DataBase::Module *modul
             new_port->setId(port_id);
             module->add(new_port);
             new_portbus->add(new_port);
-            PLOGI << "  port:" << name;
+            Yosys::log("  port:%s \n", name.c_str());
         }
         module->add(new_portbus);
     }

@@ -10,11 +10,16 @@ InstPort::InstPort()
 
 }
 
+
 Module *InstPort::module() const
 {
     return _module;
 }
 
+void InstPort::setModule(Module *module)
+{
+    _module = module;
+}
 Port *InstPort::port() const
 {
     return _port;

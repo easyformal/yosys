@@ -15,7 +15,6 @@ namespace Yosys {
         struct SigBit;
         struct SigChunk;
         struct Const;
-
     }
 }
 #include <kernel/hashlib.h>
@@ -36,6 +35,7 @@ public:
     std::string signal_name(const Yosys::RTLIL::SigSpec &sig, bool autoint = true);
     void dump_const(std::ostream &f, const Yosys::RTLIL::Const &data, int width = -1, int offset = 0, bool autoint = true);
     void dump_sigchunk(std::ostream &f, const Yosys::RTLIL::SigChunk &chunk, bool autoint = true);
+
 private:
     std::map<Yosys::RTLIL::SigBit, DataBase::Net*> net_map;
 

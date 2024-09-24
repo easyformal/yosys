@@ -19,6 +19,7 @@ public:
     const std::string &name() const;
 
     Module *module() const;
+    void setModule(Module *module);
 
     bool isSigned() const;
     void setIsSigned(bool newIsSigned);
@@ -45,6 +46,7 @@ public:
     int size() const;
 
     Module *module() const;
+    void setModule(Module *module);
 
 private:
     std::vector<Net*> _nets;

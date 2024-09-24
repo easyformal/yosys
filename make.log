@@ -1,0 +1,1604 @@
+In file included from abc/src/misc/vec/vec.h:29,
+                 from abc/src/base/abc/abc.h:34,
+                 from ./kernel/abcutil.h:4,
+                 from passes/cmds/verify.cc:5:
+abc/src/misc/util/abc_global.h:162:5: 错误：#error unknown platform
+  162 |    #error unknown platform
+      |     ^~~~~
+abc/src/misc/util/abc_global.h:181:5: 错误：#error unknown platform
+  181 |    #error unknown platform
+      |     ^~~~~
+abc/src/misc/util/abc_global.h:200:5: 错误：#error unknown platform
+  200 |    #error unknown platform
+      |     ^~~~~
+abc/src/misc/util/abc_global.h:217:5: 错误：#error unknown platform
+  217 |    #error unknown platform
+      |     ^~~~~
+abc/src/misc/util/abc_global.h:234:5: 错误：#error unknown platform
+  234 |    #error unknown platform
+      |     ^~~~~
+make[1]: *** 没有规则可制作目标“/home/lzx/yosys/abc/src/misc/util/abc_global.h”，由“src/map/if/acd/ac_wrapper.o” 需求。 停止。
+make: *** [Makefile:825：abc/libabc.a] 错误 2
+make: *** 正在等待未完成的任务....
+abc/src/misc/util/abc_global.h:243:9: 错误：‘ABC_UINT64_T’不是一个类型名
+  243 | typedef ABC_UINT64_T word;
+      |         ^~~~~~~~~~~~
+abc/src/misc/util/abc_global.h:244:9: 错误：‘ABC_INT64_T’不是一个类型名
+  244 | typedef ABC_INT64_T iword;
+      |         ^~~~~~~~~~~
+abc/src/misc/util/abc_global.h:274:15: 错误：‘word’不是一个类型名
+  274 | static inline word     Abc_MaxWord( word a, word b )          { return a > b ?  a : b; }
+      |               ^~~~
+abc/src/misc/util/abc_global.h:275:15: 错误：‘word’不是一个类型名
+  275 | static inline word     Abc_MinWord( word a, word b )          { return a < b ?  a : b; }
+      |               ^~~~
+abc/src/misc/util/abc_global.h:285:15: 错误：‘word’不是一个类型名
+  285 | static inline word     Abc_Dbl2Word( double Dbl )             { union { word x; double y; } v; v.y = Dbl; return v.x;       }
+      |               ^~~~
+abc/src/misc/util/abc_global.h:286:38: 错误：‘word’在此作用域中尚未声明
+  286 | static inline double   Abc_Word2Dbl( word Num )               { union { word x; double y; } v; v.x = Num; return v.y;       }
+      |                                      ^~~~
+abc/src/misc/util/abc_global.h: In function ‘int Abc_Ptr2Int(void*)’:
+abc/src/misc/util/abc_global.h:313:78: 错误：‘ABC_PTRINT_T’在此作用域中尚未声明
+  313 | static inline int      Abc_Ptr2Int( void * p )                { return (int)(ABC_PTRINT_T)p;      }
+      |                                                                              ^~~~~~~~~~~~
+abc/src/misc/util/abc_global.h:313:91: 错误：expected ‘;’ before ‘p’
+  313 | static inline int      Abc_Ptr2Int( void * p )                { return (int)(ABC_PTRINT_T)p;      }
+      |                                                                                           ^
+      |                                                                                           ;
+abc/src/misc/util/abc_global.h:313:91: 警告：语句不起作用 [-Wunused-value]
+abc/src/misc/util/abc_global.h: In function ‘void* Abc_Int2Ptr(int)’:
+abc/src/misc/util/abc_global.h:314:81: 错误：‘ABC_PTRINT_T’在此作用域中尚未声明
+  314 | static inline void *   Abc_Int2Ptr( int i )                   { return (void *)(ABC_PTRINT_T)i;   }
+      |                                                                                 ^~~~~~~~~~~~
+abc/src/misc/util/abc_global.h:314:94: 错误：expected ‘;’ before ‘i’
+  314 | static inline void *   Abc_Int2Ptr( int i )                   { return (void *)(ABC_PTRINT_T)i;   }
+      |                                                                                              ^
+      |                                                                                              ;
+abc/src/misc/util/abc_global.h:314:94: 警告：语句不起作用 [-Wunused-value]
+abc/src/misc/util/abc_global.h: 在全局域：
+abc/src/misc/util/abc_global.h:315:15: 错误：‘word’不是一个类型名
+  315 | static inline word     Abc_Ptr2Wrd( void * p )                { return (word)(ABC_PTRUINT_T)p;    }
+      |               ^~~~
+abc/src/misc/util/abc_global.h:316:37: 错误：‘word’在此作用域中尚未声明
+  316 | static inline void *   Abc_Wrd2Ptr( word i )                  { return (void *)(ABC_PTRUINT_T)i;  }
+      |                                     ^~~~
+abc/src/misc/util/abc_global.h:328:9: 错误：‘ABC_INT64_T’不是一个类型名
+  328 | typedef ABC_INT64_T abctime;
+      |         ^~~~~~~~~~~
+abc/src/misc/util/abc_global.h:330:15: 错误：‘abctime’不是一个类型名
+  330 | static inline abctime Abc_Clock()
+      |               ^~~~~~~
+abc/src/misc/util/abc_global.h:349:15: 错误：‘abctime’不是一个类型名
+  349 | static inline abctime Abc_ThreadClock()
+      |               ^~~~~~~
+abc/src/misc/util/abc_global.h:466:65: 错误：‘abctime’未声明
+  466 | static inline void Abc_PrintTime( int level, const char * pStr, abctime time )
+      |                                                                 ^~~~~~~
+abc/src/misc/util/abc_global.h: In function ‘void Abc_PrintTime(int, const char*, int)’:
+abc/src/misc/util/abc_global.h:466:39: 警告：unused parameter ‘level’ [-Wunused-parameter]
+  466 | static inline void Abc_PrintTime( int level, const char * pStr, abctime time )
+      |                                   ~~~~^~~~~
+abc/src/misc/util/abc_global.h: 在全局域：
+abc/src/misc/util/abc_global.h:471:66: 错误：‘abctime’未声明
+  471 | static inline void Abc_PrintTimeP( int level, const char * pStr, abctime time, abctime Time )
+      |                                                                  ^~~~~~~
+abc/src/misc/util/abc_global.h:471:80: 错误：‘abctime’未声明
+  471 | static inline void Abc_PrintTimeP( int level, const char * pStr, abctime time, abctime Time )
+      |                                                                                ^~~~~~~
+abc/src/misc/util/abc_global.h: In function ‘void Abc_PrintTimeP(int, const char*, int, int)’:
+abc/src/misc/util/abc_global.h:471:40: 警告：unused parameter ‘level’ [-Wunused-parameter]
+  471 | static inline void Abc_PrintTimeP( int level, const char * pStr, abctime time, abctime Time )
+      |                                    ~~~~^~~~~
+abc/src/misc/util/abc_global.h: In function ‘void Abc_PrintMemoryP(int, const char*, int, int)’:
+abc/src/misc/util/abc_global.h:476:42: 警告：unused parameter ‘level’ [-Wunused-parameter]
+  476 | static inline void Abc_PrintMemoryP( int level, const char * pStr, int mem, int Mem )
+      |                                      ~~~~^~~~~
+abc/src/misc/util/abc_global.h: 在全局域：
+abc/src/misc/util/abc_global.h:543:15: 错误：变量或字段‘Abc_QuickSort1’声明为 void
+  543 | extern void   Abc_QuickSort1( word * pData, int nSize, int fDecrease );
+      |               ^~~~~~~~~~~~~~
+abc/src/misc/util/abc_global.h:543:31: 错误：‘word’在此作用域中尚未声明
+  543 | extern void   Abc_QuickSort1( word * pData, int nSize, int fDecrease );
+      |                               ^~~~
+abc/src/misc/util/abc_global.h:543:38: 错误：‘pData’在此作用域中尚未声明
+  543 | extern void   Abc_QuickSort1( word * pData, int nSize, int fDecrease );
+      |                                      ^~~~~
+abc/src/misc/util/abc_global.h:543:45: 错误：expected primary-expression before ‘int’
+  543 | extern void   Abc_QuickSort1( word * pData, int nSize, int fDecrease );
+      |                                             ^~~
+abc/src/misc/util/abc_global.h:543:56: 错误：expected primary-expression before ‘int’
+  543 | extern void   Abc_QuickSort1( word * pData, int nSize, int fDecrease );
+      |                                                        ^~~
+abc/src/misc/util/abc_global.h:544:15: 错误：变量或字段‘Abc_QuickSort2’声明为 void
+  544 | extern void   Abc_QuickSort2( word * pData, int nSize, int fDecrease );
+      |               ^~~~~~~~~~~~~~
+abc/src/misc/util/abc_global.h:544:31: 错误：‘word’在此作用域中尚未声明
+  544 | extern void   Abc_QuickSort2( word * pData, int nSize, int fDecrease );
+      |                               ^~~~
+abc/src/misc/util/abc_global.h:544:38: 错误：‘pData’在此作用域中尚未声明
+  544 | extern void   Abc_QuickSort2( word * pData, int nSize, int fDecrease );
+      |                                      ^~~~~
+abc/src/misc/util/abc_global.h:544:45: 错误：expected primary-expression before ‘int’
+  544 | extern void   Abc_QuickSort2( word * pData, int nSize, int fDecrease );
+      |                                             ^~~
+abc/src/misc/util/abc_global.h:544:56: 错误：expected primary-expression before ‘int’
+  544 | extern void   Abc_QuickSort2( word * pData, int nSize, int fDecrease );
+      |                                                        ^~~
+abc/src/misc/util/abc_global.h:545:15: 错误：变量或字段‘Abc_QuickSort3’声明为 void
+  545 | extern void   Abc_QuickSort3( word * pData, int nSize, int fDecrease );
+      |               ^~~~~~~~~~~~~~
+abc/src/misc/util/abc_global.h:545:31: 错误：‘word’在此作用域中尚未声明
+  545 | extern void   Abc_QuickSort3( word * pData, int nSize, int fDecrease );
+      |                               ^~~~
+abc/src/misc/util/abc_global.h:545:38: 错误：‘pData’在此作用域中尚未声明
+  545 | extern void   Abc_QuickSort3( word * pData, int nSize, int fDecrease );
+      |                                      ^~~~~
+abc/src/misc/util/abc_global.h:545:45: 错误：expected primary-expression before ‘int’
+  545 | extern void   Abc_QuickSort3( word * pData, int nSize, int fDecrease );
+      |                                             ^~~
+abc/src/misc/util/abc_global.h:545:56: 错误：expected primary-expression before ‘int’
+  545 | extern void   Abc_QuickSort3( word * pData, int nSize, int fDecrease );
+      |                                                        ^~~
+abc/src/misc/util/abc_global.h:546:78: 错误：‘word’未声明
+  546 | extern void   Abc_QuickSortCostData( int * pCosts, int nSize, int fDecrease, word * pData, int * pResult );
+      |                                                                              ^~~~
+abc/src/misc/util/abc_global.h:550:8: 错误：‘word’不是一个类型名
+  550 | extern word     Abc_RandomW( int fReset );
+      |        ^~~~
+In file included from abc/src/misc/vec/vec.h:31:
+abc/src/misc/vec/vecInt.h: In function ‘void Vec_IntUniqueProfile(Vec_Int_t*, int*, int*, int, int)’:
+abc/src/misc/vec/vecInt.h:1651:54: 警告：unused parameter ‘vData’ [-Wunused-parameter]
+ 1651 | static inline void Vec_IntUniqueProfile( Vec_Int_t * vData, int * pTable, int * pNexts, int TableMask, int nIntSize )
+      |                                          ~~~~~~~~~~~~^~~~~
+abc/src/misc/vec/vecInt.h:1651:108: 警告：unused parameter ‘nIntSize’ [-Wunused-parameter]
+ 1651 | static inline void Vec_IntUniqueProfile( Vec_Int_t * vData, int * pTable, int * pNexts, int TableMask, int nIntSize )
+      |                                                                                                        ~~~~^~~~~~~~
+In file included from abc/src/misc/vec/vec.h:33:
+abc/src/misc/vec/vecStr.h: 在全局域：
+abc/src/misc/vec/vecStr.h:995:51: 错误：‘word’未声明
+  995 | static inline void Vec_StrPutW( Vec_Str_t * vOut, word Val )
+      |                                                   ^~~~
+abc/src/misc/vec/vecStr.h:1001:15: 错误：‘word’不是一个类型名
+ 1001 | static inline word Vec_StrGetW( Vec_Str_t * vOut, int * pPos )
+      |               ^~~~
+In file included from abc/src/misc/vec/vec.h:34:
+abc/src/misc/vec/vecPtr.h: In function ‘void Vec_PtrFreeData(Vec_Ptr_t*)’:
+abc/src/misc/vec/vecPtr.h:598:32: 错误：‘ABC_PTRINT_T’在此作用域中尚未声明
+  598 |         if ( pTemp != (void *)(ABC_PTRINT_T)1 && pTemp != (void *)(ABC_PTRINT_T)2 )
+      |                                ^~~~~~~~~~~~
+abc/src/misc/vec/vecPtr.h:598:45: 错误：expected ‘)’ before numeric constant
+  598 |         if ( pTemp != (void *)(ABC_PTRINT_T)1 && pTemp != (void *)(ABC_PTRINT_T)2 )
+      |            ~                                ^
+      |                                             )
+In file included from abc/src/misc/vec/vec.h:37:
+abc/src/misc/vec/vecWrd.h: 在全局域：
+abc/src/misc/vec/vecWrd.h:47:5: 错误：‘word’不是一个类型名
+   47 |     word *           pArray;
+      |     ^~~~
+abc/src/misc/vec/vecWrd.h: In function ‘Vec_Wrd_t* Vec_WrdAlloc(int)’:
+abc/src/misc/vec/vecWrd.h:90:8: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+   90 |     p->pArray = p->nCap? ABC_ALLOC( word, p->nCap ) : NULL;
+      |        ^~~~~~
+abc/src/misc/vec/vecWrd.h:90:37: 错误：‘word’在此作用域中尚未声明
+   90 |     p->pArray = p->nCap? ABC_ALLOC( word, p->nCap ) : NULL;
+      |                                     ^~~~
+abc/src/misc/util/abc_global.h:263:36: 附注：in definition of macro ‘ABC_ALLOC’
+  263 | #define ABC_ALLOC(type, num)     ((type *) malloc(sizeof(type) * (size_t)(num)))
+      |                                    ^~~~
+abc/src/misc/util/abc_global.h:263:42: 错误：expected primary-expression before ‘)’ token
+  263 | #define ABC_ALLOC(type, num)     ((type *) malloc(sizeof(type) * (size_t)(num)))
+      |                                          ^
+abc/src/misc/vec/vecWrd.h:90:26: 附注：in expansion of macro ‘ABC_ALLOC’
+   90 |     p->pArray = p->nCap? ABC_ALLOC( word, p->nCap ) : NULL;
+      |                          ^~~~~~~~~
+abc/src/misc/util/abc_global.h:263:44: 错误：expected ‘)’ before ‘malloc’
+  263 | #define ABC_ALLOC(type, num)     ((type *) malloc(sizeof(type) * (size_t)(num)))
+      |                                  ~         ^~~~~~
+abc/src/misc/vec/vecWrd.h:90:26: 附注：in expansion of macro ‘ABC_ALLOC’
+   90 |     p->pArray = p->nCap? ABC_ALLOC( word, p->nCap ) : NULL;
+      |                          ^~~~~~~~~
+abc/src/misc/vec/vecWrd.h:90:59: 错误：expected ‘:’ before ‘;’ token
+   90 |     p->pArray = p->nCap? ABC_ALLOC( word, p->nCap ) : NULL;
+      |                                                           ^
+abc/src/misc/vec/vecWrd.h:90:59: 错误：expected primary-expression before ‘;’ token
+abc/src/misc/vec/vecWrd.h: In function ‘Vec_Wrd_t* Vec_WrdAllocExact(int)’:
+abc/src/misc/vec/vecWrd.h:100:8: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  100 |     p->pArray = p->nCap? ABC_ALLOC( word, p->nCap ) : NULL;
+      |        ^~~~~~
+abc/src/misc/vec/vecWrd.h:100:37: 错误：‘word’在此作用域中尚未声明
+  100 |     p->pArray = p->nCap? ABC_ALLOC( word, p->nCap ) : NULL;
+      |                                     ^~~~
+abc/src/misc/util/abc_global.h:263:36: 附注：in definition of macro ‘ABC_ALLOC’
+  263 | #define ABC_ALLOC(type, num)     ((type *) malloc(sizeof(type) * (size_t)(num)))
+      |                                    ^~~~
+abc/src/misc/util/abc_global.h:263:42: 错误：expected primary-expression before ‘)’ token
+  263 | #define ABC_ALLOC(type, num)     ((type *) malloc(sizeof(type) * (size_t)(num)))
+      |                                          ^
+abc/src/misc/vec/vecWrd.h:100:26: 附注：in expansion of macro ‘ABC_ALLOC’
+  100 |     p->pArray = p->nCap? ABC_ALLOC( word, p->nCap ) : NULL;
+      |                          ^~~~~~~~~
+abc/src/misc/util/abc_global.h:263:44: 错误：expected ‘)’ before ‘malloc’
+  263 | #define ABC_ALLOC(type, num)     ((type *) malloc(sizeof(type) * (size_t)(num)))
+      |                                  ~         ^~~~~~
+abc/src/misc/vec/vecWrd.h:100:26: 附注：in expansion of macro ‘ABC_ALLOC’
+  100 |     p->pArray = p->nCap? ABC_ALLOC( word, p->nCap ) : NULL;
+      |                          ^~~~~~~~~
+abc/src/misc/vec/vecWrd.h:100:59: 错误：expected ‘:’ before ‘;’ token
+  100 |     p->pArray = p->nCap? ABC_ALLOC( word, p->nCap ) : NULL;
+      |                                                           ^
+abc/src/misc/vec/vecWrd.h:100:59: 错误：expected primary-expression before ‘;’ token
+abc/src/misc/vec/vecWrd.h: In function ‘Vec_Wrd_t* Vec_WrdStart(int)’:
+abc/src/misc/vec/vecWrd.h:120:16: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  120 |     memset( p->pArray, 0, sizeof(word) * (size_t)nSize );
+      |                ^~~~~~
+abc/src/misc/vec/vecWrd.h:120:34: 错误：‘word’在此作用域中尚未声明
+  120 |     memset( p->pArray, 0, sizeof(word) * (size_t)nSize );
+      |                                  ^~~~
+abc/src/misc/vec/vecWrd.h: In function ‘Vec_Wrd_t* Vec_WrdStartFull(int)’:
+abc/src/misc/vec/vecWrd.h:140:16: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  140 |     memset( p->pArray, 0xff, sizeof(word) * (size_t)nSize );
+      |                ^~~~~~
+abc/src/misc/vec/vecWrd.h:140:37: 错误：‘word’在此作用域中尚未声明
+  140 |     memset( p->pArray, 0xff, sizeof(word) * (size_t)nSize );
+      |                                     ^~~~
+abc/src/misc/vec/vecWrd.h: In function ‘Vec_Wrd_t* Vec_WrdStartNatural(int)’:
+abc/src/misc/vec/vecWrd.h:162:12: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  162 |         p->pArray[i] = i;
+      |            ^~~~~~
+abc/src/misc/vec/vecWrd.h: In function ‘Vec_Wrd_t* Vec_WrdStartRandom(int)’:
+abc/src/misc/vec/vecWrd.h:169:16: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  169 |         vSims->pArray[i] = Abc_RandomW(0);
+      |                ^~~~~~
+abc/src/misc/vec/vecWrd.h:169:28: 错误：‘Abc_RandomW’ was not declared in this scope; did you mean ‘Abc_Random’?
+  169 |         vSims->pArray[i] = Abc_RandomW(0);
+      |                            ^~~~~~~~~~~
+      |                            Abc_Random
+abc/src/misc/vec/vecWrd.h: In function ‘Vec_Wrd_t* Vec_WrdStartTruthTables(int)’:
+abc/src/misc/vec/vecWrd.h:181:45: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  181 |         unsigned * pTruth = (unsigned *)(p->pArray + nWords * i);
+      |                                             ^~~~~~
+abc/src/misc/vec/vecWrd.h: In function ‘Vec_Wrd_t* Vec_WrdStartTruthTablesRev(int)’:
+abc/src/misc/vec/vecWrd.h:207:45: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  207 |         unsigned * pTruth = (unsigned *)(p->pArray + nWords * (nVars-1-i));
+      |                                             ^~~~~~
+abc/src/misc/vec/vecWrd.h: In function ‘int Vec_WrdShiftOne(Vec_Wrd_t*, int)’:
+abc/src/misc/vec/vecWrd.h:229:12: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  229 |         p->pArray[i*nWords] <<= 1;
+      |            ^~~~~~
+abc/src/misc/vec/vecWrd.h: 在全局域：
+abc/src/misc/vec/vecWrd.h:244:46: 错误：‘word’在此作用域中尚未声明
+  244 | static inline Vec_Wrd_t * Vec_WrdAllocArray( word * pArray, int nSize )
+      |                                              ^~~~
+abc/src/misc/vec/vecWrd.h:244:53: 错误：‘pArray’在此作用域中尚未声明
+  244 | static inline Vec_Wrd_t * Vec_WrdAllocArray( word * pArray, int nSize )
+      |                                                     ^~~~~~
+abc/src/misc/vec/vecWrd.h:244:61: 错误：expected primary-expression before ‘int’
+  244 | static inline Vec_Wrd_t * Vec_WrdAllocArray( word * pArray, int nSize )
+      |                                                             ^~~
+abc/src/misc/vec/vecWrd.h:244:71: 错误：expression list treated as compound expression in initializer [-fpermissive]
+  244 | static inline Vec_Wrd_t * Vec_WrdAllocArray( word * pArray, int nSize )
+      |                                                                       ^
+abc/src/misc/vec/vecWrd.h:265:50: 错误：‘word’在此作用域中尚未声明
+  265 | static inline Vec_Wrd_t * Vec_WrdAllocArrayCopy( word * pArray, int nSize )
+      |                                                  ^~~~
+abc/src/misc/vec/vecWrd.h:265:57: 错误：‘pArray’在此作用域中尚未声明
+  265 | static inline Vec_Wrd_t * Vec_WrdAllocArrayCopy( word * pArray, int nSize )
+      |                                                         ^~~~~~
+abc/src/misc/vec/vecWrd.h:265:65: 错误：expected primary-expression before ‘int’
+  265 | static inline Vec_Wrd_t * Vec_WrdAllocArrayCopy( word * pArray, int nSize )
+      |                                                                 ^~~
+abc/src/misc/vec/vecWrd.h:265:75: 错误：expression list treated as compound expression in initializer [-fpermissive]
+  265 | static inline Vec_Wrd_t * Vec_WrdAllocArrayCopy( word * pArray, int nSize )
+      |                                                                           ^
+abc/src/misc/vec/vecWrd.h: In function ‘Vec_Wrd_t* Vec_WrdDup(Vec_Wrd_t*)’:
+abc/src/misc/vec/vecWrd.h:293:8: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  293 |     p->pArray = p->nCap? ABC_ALLOC( word, p->nCap ) : NULL;
+      |        ^~~~~~
+abc/src/misc/vec/vecWrd.h:293:37: 错误：‘word’在此作用域中尚未声明
+  293 |     p->pArray = p->nCap? ABC_ALLOC( word, p->nCap ) : NULL;
+      |                                     ^~~~
+abc/src/misc/util/abc_global.h:263:36: 附注：in definition of macro ‘ABC_ALLOC’
+  263 | #define ABC_ALLOC(type, num)     ((type *) malloc(sizeof(type) * (size_t)(num)))
+      |                                    ^~~~
+abc/src/misc/util/abc_global.h:263:42: 错误：expected primary-expression before ‘)’ token
+  263 | #define ABC_ALLOC(type, num)     ((type *) malloc(sizeof(type) * (size_t)(num)))
+      |                                          ^
+abc/src/misc/vec/vecWrd.h:293:26: 附注：in expansion of macro ‘ABC_ALLOC’
+  293 |     p->pArray = p->nCap? ABC_ALLOC( word, p->nCap ) : NULL;
+      |                          ^~~~~~~~~
+abc/src/misc/util/abc_global.h:263:44: 错误：expected ‘)’ before ‘malloc’
+  263 | #define ABC_ALLOC(type, num)     ((type *) malloc(sizeof(type) * (size_t)(num)))
+      |                                  ~         ^~~~~~
+abc/src/misc/vec/vecWrd.h:293:26: 附注：in expansion of macro ‘ABC_ALLOC’
+  293 |     p->pArray = p->nCap? ABC_ALLOC( word, p->nCap ) : NULL;
+      |                          ^~~~~~~~~
+abc/src/misc/vec/vecWrd.h:293:59: 错误：expected ‘:’ before ‘;’ token
+  293 |     p->pArray = p->nCap? ABC_ALLOC( word, p->nCap ) : NULL;
+      |                                                           ^
+abc/src/misc/vec/vecWrd.h:293:59: 错误：expected primary-expression before ‘;’ token
+abc/src/misc/vec/vecWrd.h:294:16: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  294 |     memcpy( p->pArray, pVec->pArray, sizeof(word) * (size_t)pVec->nSize );
+      |                ^~~~~~
+abc/src/misc/vec/vecWrd.h:294:30: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  294 |     memcpy( p->pArray, pVec->pArray, sizeof(word) * (size_t)pVec->nSize );
+      |                              ^~~~~~
+abc/src/misc/vec/vecWrd.h: In function ‘Vec_Wrd_t* Vec_WrdDupArray(Vec_Wrd_t*)’:
+abc/src/misc/vec/vecWrd.h:315:8: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  315 |     p->pArray = pVec->pArray;
+      |        ^~~~~~
+abc/src/misc/vec/vecWrd.h:315:23: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  315 |     p->pArray = pVec->pArray;
+      |                       ^~~~~~
+abc/src/misc/vec/vecWrd.h:318:11: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  318 |     pVec->pArray = NULL;
+      |           ^~~~~~
+abc/src/misc/vec/vecWrd.h: In function ‘void Vec_WrdErase(Vec_Wrd_t*)’:
+abc/src/misc/vec/vecWrd.h:335:18: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  335 |     ABC_FREE( p->pArray );
+      |                  ^~~~~~
+abc/src/misc/util/abc_global.h:266:36: 附注：in definition of macro ‘ABC_FREE’
+  266 | #define ABC_FREE(obj)            ((obj) ? (free((char *) (obj)), (obj) = 0) : 0)
+      |                                    ^~~
+abc/src/misc/vec/vecWrd.h:335:18: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  335 |     ABC_FREE( p->pArray );
+      |                  ^~~~~~
+abc/src/misc/util/abc_global.h:266:59: 附注：in definition of macro ‘ABC_FREE’
+  266 | #define ABC_FREE(obj)            ((obj) ? (free((char *) (obj)), (obj) = 0) : 0)
+      |                                                           ^~~
+abc/src/misc/vec/vecWrd.h:335:18: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  335 |     ABC_FREE( p->pArray );
+      |                  ^~~~~~
+abc/src/misc/util/abc_global.h:266:67: 附注：in definition of macro ‘ABC_FREE’
+  266 | #define ABC_FREE(obj)            ((obj) ? (free((char *) (obj)), (obj) = 0) : 0)
+      |                                                                   ^~~
+abc/src/misc/vec/vecWrd.h: In function ‘void Vec_WrdFree(Vec_Wrd_t*)’:
+abc/src/misc/vec/vecWrd.h:341:18: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  341 |     ABC_FREE( p->pArray );
+      |                  ^~~~~~
+abc/src/misc/util/abc_global.h:266:36: 附注：in definition of macro ‘ABC_FREE’
+  266 | #define ABC_FREE(obj)            ((obj) ? (free((char *) (obj)), (obj) = 0) : 0)
+      |                                    ^~~
+abc/src/misc/vec/vecWrd.h:341:18: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  341 |     ABC_FREE( p->pArray );
+      |                  ^~~~~~
+abc/src/misc/util/abc_global.h:266:59: 附注：in definition of macro ‘ABC_FREE’
+  266 | #define ABC_FREE(obj)            ((obj) ? (free((char *) (obj)), (obj) = 0) : 0)
+      |                                                           ^~~
+abc/src/misc/vec/vecWrd.h:341:18: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  341 |     ABC_FREE( p->pArray );
+      |                  ^~~~~~
+abc/src/misc/util/abc_global.h:266:67: 附注：in definition of macro ‘ABC_FREE’
+  266 | #define ABC_FREE(obj)            ((obj) ? (free((char *) (obj)), (obj) = 0) : 0)
+      |                                                                   ^~~
+abc/src/misc/vec/vecWrd.h: In function ‘void Vec_WrdFreeP(Vec_Wrd_t**)’:
+abc/src/misc/vec/vecWrd.h:360:21: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  360 |     ABC_FREE( (*p)->pArray );
+      |                     ^~~~~~
+abc/src/misc/util/abc_global.h:266:36: 附注：in definition of macro ‘ABC_FREE’
+  266 | #define ABC_FREE(obj)            ((obj) ? (free((char *) (obj)), (obj) = 0) : 0)
+      |                                    ^~~
+abc/src/misc/vec/vecWrd.h:360:21: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  360 |     ABC_FREE( (*p)->pArray );
+      |                     ^~~~~~
+abc/src/misc/util/abc_global.h:266:59: 附注：in definition of macro ‘ABC_FREE’
+  266 | #define ABC_FREE(obj)            ((obj) ? (free((char *) (obj)), (obj) = 0) : 0)
+      |                                                           ^~~
+abc/src/misc/vec/vecWrd.h:360:21: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  360 |     ABC_FREE( (*p)->pArray );
+      |                     ^~~~~~
+abc/src/misc/util/abc_global.h:266:67: 附注：in definition of macro ‘ABC_FREE’
+  266 | #define ABC_FREE(obj)            ((obj) ? (free((char *) (obj)), (obj) = 0) : 0)
+      |                                                                   ^~~
+abc/src/misc/vec/vecWrd.h: 在全局域：
+abc/src/misc/vec/vecWrd.h:375:15: 错误：‘word’不是一个类型名
+  375 | static inline word * Vec_WrdReleaseArray( Vec_Wrd_t * p )
+      |               ^~~~
+abc/src/misc/vec/vecWrd.h:395:15: 错误：‘word’不是一个类型名
+  395 | static inline word * Vec_WrdArray( Vec_Wrd_t * p )
+      |               ^~~~
+abc/src/misc/vec/vecWrd.h:399:15: 错误：‘word’不是一个类型名
+  399 | static inline word * Vec_WrdLimit( Vec_Wrd_t * p )
+      |               ^~~~
+abc/src/misc/vec/vecWrd.h: In function ‘double Vec_WrdMemory(Vec_Wrd_t*)’:
+abc/src/misc/vec/vecWrd.h:453:36: 错误：‘word’在此作用域中尚未声明
+  453 |     return !p ? 0.0 : 1.0 * sizeof(word) * (size_t)p->nCap + sizeof(Vec_Wrd_t);
+      |                                    ^~~~
+abc/src/misc/vec/vecWrd.h: 在全局域：
+abc/src/misc/vec/vecWrd.h:467:15: 错误：‘word’不是一个类型名
+  467 | static inline word Vec_WrdEntry( Vec_Wrd_t * p, int i )
+      |               ^~~~
+abc/src/misc/vec/vecWrd.h:484:15: 错误：‘word’不是一个类型名
+  484 | static inline word * Vec_WrdEntryP( Vec_Wrd_t * p, int i )
+      |               ^~~~
+abc/src/misc/vec/vecWrd.h:501:61: 错误：‘word’未声明
+  501 | static inline void Vec_WrdWriteEntry( Vec_Wrd_t * p, int i, word Entry )
+      |                                                             ^~~~
+abc/src/misc/vec/vecWrd.h: In function ‘void Vec_WrdWriteEntry(Vec_Wrd_t*, int, int)’:
+abc/src/misc/vec/vecWrd.h:504:8: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  504 |     p->pArray[i] = Entry;
+      |        ^~~~~~
+abc/src/misc/vec/vecWrd.h: 在全局域：
+abc/src/misc/vec/vecWrd.h:518:15: 错误：‘word’不是一个类型名
+  518 | static inline word Vec_WrdAddToEntry( Vec_Wrd_t * p, int i, word Addition )
+      |               ^~~~
+abc/src/misc/vec/vecWrd.h:535:15: 错误：‘word’不是一个类型名
+  535 | static inline word Vec_WrdEntryLast( Vec_Wrd_t * p )
+      |               ^~~~
+abc/src/misc/vec/vecWrd.h: In function ‘void Vec_WrdGrow(Vec_Wrd_t*, int)’:
+abc/src/misc/vec/vecWrd.h:556:8: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  556 |     p->pArray = ABC_REALLOC( word, p->pArray, nCapMin );
+      |        ^~~~~~
+abc/src/misc/vec/vecWrd.h:556:39: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  556 |     p->pArray = ABC_REALLOC( word, p->pArray, nCapMin );
+      |                                       ^~~~~~
+abc/src/misc/util/abc_global.h:268:11: 附注：in definition of macro ‘ABC_REALLOC’
+  268 |         ((obj) ? ((type *) realloc((char *)(obj), sizeof(type) * (size_t)(num))) : \
+      |           ^~~
+abc/src/misc/vec/vecWrd.h:556:30: 错误：‘word’在此作用域中尚未声明
+  556 |     p->pArray = ABC_REALLOC( word, p->pArray, nCapMin );
+      |                              ^~~~
+abc/src/misc/util/abc_global.h:268:20: 附注：in definition of macro ‘ABC_REALLOC’
+  268 |         ((obj) ? ((type *) realloc((char *)(obj), sizeof(type) * (size_t)(num))) : \
+      |                    ^~~~
+abc/src/misc/util/abc_global.h:268:26: 错误：expected primary-expression before ‘)’ token
+  268 |         ((obj) ? ((type *) realloc((char *)(obj), sizeof(type) * (size_t)(num))) : \
+      |                          ^
+abc/src/misc/vec/vecWrd.h:556:17: 附注：in expansion of macro ‘ABC_REALLOC’
+  556 |     p->pArray = ABC_REALLOC( word, p->pArray, nCapMin );
+      |                 ^~~~~~~~~~~
+abc/src/misc/util/abc_global.h:268:28: 错误：expected ‘)’ before ‘realloc’
+  268 |         ((obj) ? ((type *) realloc((char *)(obj), sizeof(type) * (size_t)(num))) : \
+      |                  ~         ^~~~~~~
+abc/src/misc/vec/vecWrd.h:556:17: 附注：in expansion of macro ‘ABC_REALLOC’
+  556 |     p->pArray = ABC_REALLOC( word, p->pArray, nCapMin );
+      |                 ^~~~~~~~~~~
+abc/src/misc/vec/vecWrd.h:556:56: 错误：expected ‘:’ before ‘;’ token
+  556 |     p->pArray = ABC_REALLOC( word, p->pArray, nCapMin );
+      |                                                        ^
+abc/src/misc/vec/vecWrd.h:556:56: 错误：expected primary-expression before ‘;’ token
+abc/src/misc/vec/vecWrd.h:556:56: 错误：expected ‘)’ before ‘;’ token
+abc/src/misc/util/abc_global.h:268:9: 附注：to match this ‘(’
+  268 |         ((obj) ? ((type *) realloc((char *)(obj), sizeof(type) * (size_t)(num))) : \
+      |         ^
+abc/src/misc/vec/vecWrd.h:556:17: 附注：in expansion of macro ‘ABC_REALLOC’
+  556 |     p->pArray = ABC_REALLOC( word, p->pArray, nCapMin );
+      |                 ^~~~~~~~~~~
+In file included from abc/src/misc/util/abc_global.h:79:
+abc/src/misc/vec/vecWrd.h:557:16: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  557 |     assert( p->pArray );
+      |                ^~~~~~
+abc/src/misc/vec/vecWrd.h: 在全局域：
+abc/src/misc/vec/vecWrd.h:572:59: 错误：‘word’未声明
+  572 | static inline void Vec_WrdFill( Vec_Wrd_t * p, int nSize, word Fill )
+      |                                                           ^~~~
+abc/src/misc/vec/vecWrd.h: In function ‘void Vec_WrdFill(Vec_Wrd_t*, int, int)’:
+abc/src/misc/vec/vecWrd.h:577:12: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  577 |         p->pArray[i] = Fill;
+      |            ^~~~~~
+abc/src/misc/vec/vecWrd.h: 在全局域：
+abc/src/misc/vec/vecWrd.h:592:64: 错误：‘word’未声明
+  592 | static inline void Vec_WrdFillExtra( Vec_Wrd_t * p, int nSize, word Fill )
+      |                                                                ^~~~
+abc/src/misc/vec/vecWrd.h: In function ‘void Vec_WrdFillExtra(Vec_Wrd_t*, int, int)’:
+abc/src/misc/vec/vecWrd.h:602:12: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  602 |         p->pArray[i] = Fill;
+      |            ^~~~~~
+abc/src/misc/vec/vecWrd.h: 在全局域：
+abc/src/misc/vec/vecWrd.h:617:15: 错误：‘word’不是一个类型名
+  617 | static inline word Vec_WrdGetEntry( Vec_Wrd_t * p, int i )
+      |               ^~~~
+abc/src/misc/vec/vecWrd.h:634:15: 错误：‘word’不是一个类型名
+  634 | static inline word * Vec_WrdGetEntryP( Vec_Wrd_t * p, int i )
+      |               ^~~~
+abc/src/misc/vec/vecWrd.h:651:59: 错误：‘word’未声明
+  651 | static inline void Vec_WrdSetEntry( Vec_Wrd_t * p, int i, word Entry )
+      |                                                           ^~~~
+abc/src/misc/vec/vecWrd.h:701:48: 错误：‘word’未声明
+  701 | static inline void Vec_WrdPush( Vec_Wrd_t * p, word Entry )
+      |                                                ^~~~
+abc/src/misc/vec/vecWrd.h: In function ‘void Vec_WrdPush(Vec_Wrd_t*, int)’:
+abc/src/misc/vec/vecWrd.h:710:8: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  710 |     p->pArray[p->nSize++] = Entry;
+      |        ^~~~~~
+abc/src/misc/vec/vecWrd.h: 在全局域：
+abc/src/misc/vec/vecWrd.h:712:51: 错误：‘word’未声明
+  712 | static inline void Vec_WrdPushTwo( Vec_Wrd_t * p, word Entry1, word Entry2 )
+      |                                                   ^~~~
+abc/src/misc/vec/vecWrd.h:712:64: 错误：‘word’未声明
+  712 | static inline void Vec_WrdPushTwo( Vec_Wrd_t * p, word Entry1, word Entry2 )
+      |                                                                ^~~~
+abc/src/misc/vec/vecWrd.h:717:53: 错误：‘word’未声明
+  717 | static inline void Vec_WrdPushThree( Vec_Wrd_t * p, word Entry1, word Entry2, word Entry3 )
+      |                                                     ^~~~
+abc/src/misc/vec/vecWrd.h:717:66: 错误：‘word’未声明
+  717 | static inline void Vec_WrdPushThree( Vec_Wrd_t * p, word Entry1, word Entry2, word Entry3 )
+      |                                                                  ^~~~
+abc/src/misc/vec/vecWrd.h:717:79: 错误：‘word’未声明
+  717 | static inline void Vec_WrdPushThree( Vec_Wrd_t * p, word Entry1, word Entry2, word Entry3 )
+      |                                                                               ^~~~
+abc/src/misc/vec/vecWrd.h:723:52: 错误：‘word’未声明
+  723 | static inline void Vec_WrdPushFour( Vec_Wrd_t * p, word Entry1, word Entry2, word Entry3, word Entry4 )
+      |                                                    ^~~~
+abc/src/misc/vec/vecWrd.h:723:65: 错误：‘word’未声明
+  723 | static inline void Vec_WrdPushFour( Vec_Wrd_t * p, word Entry1, word Entry2, word Entry3, word Entry4 )
+      |                                                                 ^~~~
+abc/src/misc/vec/vecWrd.h:723:78: 错误：‘word’未声明
+  723 | static inline void Vec_WrdPushFour( Vec_Wrd_t * p, word Entry1, word Entry2, word Entry3, word Entry4 )
+      |                                                                              ^~~~
+abc/src/misc/vec/vecWrd.h:723:91: 错误：‘word’未声明
+  723 | static inline void Vec_WrdPushFour( Vec_Wrd_t * p, word Entry1, word Entry2, word Entry3, word Entry4 )
+      |                                                                                           ^~~~
+abc/src/misc/vec/vecWrd.h:730:53: 错误：‘word’未声明
+  730 | static inline void Vec_WrdPushArray( Vec_Wrd_t * p, word * pEntries, int nEntries )
+      |                                                     ^~~~
+abc/src/misc/vec/vecWrd.h:748:53: 错误：‘word’未声明
+  748 | static inline void Vec_WrdPushFirst( Vec_Wrd_t * p, word Entry )
+      |                                                     ^~~~
+abc/src/misc/vec/vecWrd.h: In function ‘void Vec_WrdPushFirst(Vec_Wrd_t*, int)’:
+abc/src/misc/vec/vecWrd.h:760:12: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  760 |         p->pArray[i] = p->pArray[i-1];
+      |            ^~~~~~
+abc/src/misc/vec/vecWrd.h:760:27: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  760 |         p->pArray[i] = p->pArray[i-1];
+      |                           ^~~~~~
+abc/src/misc/vec/vecWrd.h:761:8: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  761 |     p->pArray[0] = Entry;
+      |        ^~~~~~
+abc/src/misc/vec/vecWrd.h: 在全局域：
+abc/src/misc/vec/vecWrd.h:775:53: 错误：‘word’未声明
+  775 | static inline void Vec_WrdPushOrder( Vec_Wrd_t * p, word Entry )
+      |                                                     ^~~~
+abc/src/misc/vec/vecWrd.h: In function ‘void Vec_WrdPushOrder(Vec_Wrd_t*, int)’:
+abc/src/misc/vec/vecWrd.h:787:17: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  787 |         if ( p->pArray[i] > Entry )
+      |                 ^~~~~~
+abc/src/misc/vec/vecWrd.h:788:16: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  788 |             p->pArray[i+1] = p->pArray[i];
+      |                ^~~~~~
+abc/src/misc/vec/vecWrd.h:788:33: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  788 |             p->pArray[i+1] = p->pArray[i];
+      |                                 ^~~~~~
+abc/src/misc/vec/vecWrd.h:791:8: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  791 |     p->pArray[i+1] = Entry;
+      |        ^~~~~~
+abc/src/misc/vec/vecWrd.h: 在全局域：
+abc/src/misc/vec/vecWrd.h:805:58: 错误：‘word’未声明
+  805 | static inline int Vec_WrdPushUniqueOrder( Vec_Wrd_t * p, word Entry )
+      |                                                          ^~~~
+abc/src/misc/vec/vecWrd.h: In function ‘int Vec_WrdPushUniqueOrder(Vec_Wrd_t*, int)’:
+abc/src/misc/vec/vecWrd.h:809:17: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  809 |         if ( p->pArray[i] == Entry )
+      |                 ^~~~~~
+abc/src/misc/vec/vecWrd.h: 在全局域：
+abc/src/misc/vec/vecWrd.h:826:53: 错误：‘word’未声明
+  826 | static inline int Vec_WrdPushUnique( Vec_Wrd_t * p, word Entry )
+      |                                                     ^~~~
+abc/src/misc/vec/vecWrd.h: In function ‘int Vec_WrdPushUnique(Vec_Wrd_t*, int)’:
+abc/src/misc/vec/vecWrd.h:830:17: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  830 |         if ( p->pArray[i] == Entry )
+      |                 ^~~~~~
+abc/src/misc/vec/vecWrd.h: 在全局域：
+abc/src/misc/vec/vecWrd.h:847:15: 错误：‘word’不是一个类型名
+  847 | static inline word * Vec_WrdFetch( Vec_Wrd_t * p, int nWords )
+      |               ^~~~
+abc/src/misc/vec/vecWrd.h:872:15: 错误：‘word’不是一个类型名
+  872 | static inline word Vec_WrdPop( Vec_Wrd_t * p )
+      |               ^~~~
+abc/src/misc/vec/vecWrd.h:889:47: 错误：‘word’未声明
+  889 | static inline int Vec_WrdFind( Vec_Wrd_t * p, word Entry )
+      |                                               ^~~~
+abc/src/misc/vec/vecWrd.h: In function ‘int Vec_WrdFind(Vec_Wrd_t*, int)’:
+abc/src/misc/vec/vecWrd.h:893:17: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  893 |         if ( p->pArray[i] == Entry )
+      |                 ^~~~~~
+abc/src/misc/vec/vecWrd.h: 在全局域：
+abc/src/misc/vec/vecWrd.h:909:49: 错误：‘word’未声明
+  909 | static inline int Vec_WrdRemove( Vec_Wrd_t * p, word Entry )
+      |                                                 ^~~~
+abc/src/misc/vec/vecWrd.h: In function ‘int Vec_WrdRemove(Vec_Wrd_t*, int)’:
+abc/src/misc/vec/vecWrd.h:913:17: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  913 |         if ( p->pArray[i] == Entry )
+      |                 ^~~~~~
+abc/src/misc/vec/vecWrd.h:919:12: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  919 |         p->pArray[i-1] = p->pArray[i];
+      |            ^~~~~~
+abc/src/misc/vec/vecWrd.h:919:29: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  919 |         p->pArray[i-1] = p->pArray[i];
+      |                             ^~~~~~
+abc/src/misc/vec/vecWrd.h: 在全局域：
+abc/src/misc/vec/vecWrd.h:935:61: 错误：‘word’未声明
+  935 | static inline void Vec_WrdInsert( Vec_Wrd_t * p, int iHere, word Entry )
+      |                                                             ^~~~
+abc/src/misc/vec/vecWrd.h: In function ‘void Vec_WrdInsert(Vec_Wrd_t*, int, int)’:
+abc/src/misc/vec/vecWrd.h:941:12: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  941 |         p->pArray[i] = p->pArray[i-1];
+      |            ^~~~~~
+abc/src/misc/vec/vecWrd.h:941:27: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  941 |         p->pArray[i] = p->pArray[i-1];
+      |                           ^~~~~~
+abc/src/misc/vec/vecWrd.h:942:8: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  942 |     p->pArray[i] = Entry;
+      |        ^~~~~~
+abc/src/misc/vec/vecWrd.h: In function ‘void Vec_WrdDrop(Vec_Wrd_t*, int)’:
+abc/src/misc/vec/vecWrd.h:950:12: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  950 |         p->pArray[k] = p->pArray[k+1];
+      |            ^~~~~~
+abc/src/misc/vec/vecWrd.h:950:27: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+  950 |         p->pArray[k] = p->pArray[k+1];
+      |                           ^~~~~~
+abc/src/misc/vec/vecWrd.h: 在全局域：
+abc/src/misc/vec/vecWrd.h:964:15: 错误：‘word’不是一个类型名
+  964 | static inline word Vec_WrdFindMax( Vec_Wrd_t * p )
+      |               ^~~~
+abc/src/misc/vec/vecWrd.h:988:15: 错误：‘word’不是一个类型名
+  988 | static inline word Vec_WrdFindMin( Vec_Wrd_t * p )
+      |               ^~~~
+abc/src/misc/vec/vecWrd.h: In function ‘void Vec_WrdReverseOrder(Vec_Wrd_t*)’:
+abc/src/misc/vec/vecWrd.h:1014:5: 错误：‘word’在此作用域中尚未声明
+ 1014 |     word Temp;
+      |     ^~~~
+abc/src/misc/vec/vecWrd.h:1018:9: 错误：‘Temp’在此作用域中尚未声明
+ 1018 |         Temp = p->pArray[i];
+      |         ^~~~
+abc/src/misc/vec/vecWrd.h:1018:19: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+ 1018 |         Temp = p->pArray[i];
+      |                   ^~~~~~
+abc/src/misc/vec/vecWrd.h:1019:12: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+ 1019 |         p->pArray[i] = p->pArray[p->nSize-1-i];
+      |            ^~~~~~
+abc/src/misc/vec/vecWrd.h:1019:27: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+ 1019 |         p->pArray[i] = p->pArray[p->nSize-1-i];
+      |                           ^~~~~~
+abc/src/misc/vec/vecWrd.h:1020:12: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+ 1020 |         p->pArray[p->nSize-1-i] = Temp;
+      |            ^~~~~~
+abc/src/misc/vec/vecWrd.h: 在全局域：
+abc/src/misc/vec/vecWrd.h:1035:57: 错误：‘word’未声明
+ 1035 | static inline Vec_Wrd_t * Vec_WrdInvert( Vec_Wrd_t * p, word Fill )
+      |                                                         ^~~~
+abc/src/misc/vec/vecWrd.h: In function ‘Vec_Wrd_t* Vec_WrdInvert(Vec_Wrd_t*, int)’:
+abc/src/misc/vec/vecWrd.h:1038:5: 错误：‘word’在此作用域中尚未声明
+ 1038 |     word Entry;
+      |     ^~~~
+abc/src/misc/vec/vecWrd.h:1040:24: 错误：‘Vec_WrdFindMax’ was not declared in this scope; did you mean ‘Vec_WrdFind’?
+ 1040 |     Vec_WrdFill( vRes, Vec_WrdFindMax(p) + 1, Fill );
+      |                        ^~~~~~~~~~~~~~
+      |                        Vec_WrdFind
+abc/src/misc/vec/vecWrd.h:1041:29: 错误：‘Entry’在此作用域中尚未声明
+ 1041 |     Vec_WrdForEachEntry( p, Entry, i )
+      |                             ^~~~~
+abc/src/misc/vec/vecWrd.h:55:48: 附注：in definition of macro ‘Vec_WrdForEachEntry’
+   55 |     for ( i = 0; (i < Vec_WrdSize(vVec)) && (((Entry) = Vec_WrdEntry(vVec, i)), 1); i++ )
+      |                                                ^~~~~
+abc/src/misc/vec/vecWrd.h:55:57: 错误：‘Vec_WrdEntry’ was not declared in this scope; did you mean ‘Vec_WrdSetEntry’?
+   55 |     for ( i = 0; (i < Vec_WrdSize(vVec)) && (((Entry) = Vec_WrdEntry(vVec, i)), 1); i++ )
+      |                                                         ^~~~~~~~~~~~
+abc/src/misc/vec/vecWrd.h:1041:5: 附注：in expansion of macro ‘Vec_WrdForEachEntry’
+ 1041 |     Vec_WrdForEachEntry( p, Entry, i )
+      |     ^~~~~~~~~~~~~~~~~~~
+abc/src/misc/vec/vecWrd.h: 在全局域：
+abc/src/misc/vec/vecWrd.h:1058:15: 错误：‘word’不是一个类型名
+ 1058 | static inline word Vec_WrdSum( Vec_Wrd_t * p )
+      |               ^~~~
+abc/src/misc/vec/vecWrd.h: In function ‘int Vec_WrdCountZero(Vec_Wrd_t*)’:
+abc/src/misc/vec/vecWrd.h:1082:24: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+ 1082 |         Counter += (p->pArray[i] == 0);
+      |                        ^~~~~~
+abc/src/misc/vec/vecWrd.h: In function ‘int Vec_WrdEqual(Vec_Wrd_t*, Vec_Wrd_t*)’:
+abc/src/misc/vec/vecWrd.h:1103:18: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+ 1103 |         if ( p1->pArray[i] != p2->pArray[i] )
+      |                  ^~~~~~
+abc/src/misc/vec/vecWrd.h:1103:35: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+ 1103 |         if ( p1->pArray[i] != p2->pArray[i] )
+      |                                   ^~~~~~
+abc/src/misc/vec/vecWrd.h: In function ‘int Vec_WrdCountCommon(Vec_Wrd_t*, Vec_Wrd_t*)’:
+abc/src/misc/vec/vecWrd.h:1122:5: 错误：‘word’在此作用域中尚未声明
+ 1122 |     word Entry;
+      |     ^~~~
+abc/src/misc/vec/vecWrd.h:1128:30: 错误：‘Vec_WrdFindMax’ was not declared in this scope; did you mean ‘Vec_WrdFind’?
+ 1128 |     Vec_WrdFillExtra( vTemp, Vec_WrdFindMax(p1) + 1, ~((word)0) );
+      |                              ^~~~~~~~~~~~~~
+      |                              Vec_WrdFind
+abc/src/misc/vec/vecWrd.h:1128:62: 错误：expected ‘)’ before numeric constant
+ 1128 |     Vec_WrdFillExtra( vTemp, Vec_WrdFindMax(p1) + 1, ~((word)0) );
+      |                                                       ~      ^
+      |                                                              )
+abc/src/misc/vec/vecWrd.h:1129:30: 错误：‘Entry’在此作用域中尚未声明
+ 1129 |     Vec_WrdForEachEntry( p1, Entry, i )
+      |                              ^~~~~
+abc/src/misc/vec/vecWrd.h:55:48: 附注：in definition of macro ‘Vec_WrdForEachEntry’
+   55 |     for ( i = 0; (i < Vec_WrdSize(vVec)) && (((Entry) = Vec_WrdEntry(vVec, i)), 1); i++ )
+      |                                                ^~~~~
+abc/src/misc/vec/vecWrd.h:55:57: 错误：‘Vec_WrdEntry’ was not declared in this scope; did you mean ‘Vec_WrdSetEntry’?
+   55 |     for ( i = 0; (i < Vec_WrdSize(vVec)) && (((Entry) = Vec_WrdEntry(vVec, i)), 1); i++ )
+      |                                                         ^~~~~~~~~~~~
+abc/src/misc/vec/vecWrd.h:1129:5: 附注：in expansion of macro ‘Vec_WrdForEachEntry’
+ 1129 |     Vec_WrdForEachEntry( p1, Entry, i )
+      |     ^~~~~~~~~~~~~~~~~~~
+abc/src/misc/vec/vecWrd.h:1130:52: 错误：expected ‘)’ before numeric constant
+ 1130 |         if ( Vec_WrdEntry(vTemp, Entry) != ~((word)0) )
+      |                                             ~      ^
+      |                                                    )
+abc/src/misc/vec/vecWrd.h:1131:22: 错误：expected ‘)’ before ‘;’ token
+ 1131 |             Counter++;
+      |                      ^
+      |                      )
+abc/src/misc/vec/vecWrd.h:1130:12: 附注：to match this ‘(’
+ 1130 |         if ( Vec_WrdEntry(vTemp, Entry) != ~((word)0) )
+      |            ^
+abc/src/misc/vec/vecWrd.h:1131:22: 警告：建议在空的‘if’语句体周围加上花括号 [-Wempty-body]
+ 1131 |             Counter++;
+      |                      ^
+abc/src/misc/vec/vecWrd.h: 在全局域：
+abc/src/misc/vec/vecWrd.h:1147:33: 错误：‘word’在此作用域中尚未声明
+ 1147 | static int Vec_WrdSortCompare1( word * pp1, word * pp2 )
+      |                                 ^~~~
+abc/src/misc/vec/vecWrd.h:1147:40: 错误：‘pp1’在此作用域中尚未声明
+ 1147 | static int Vec_WrdSortCompare1( word * pp1, word * pp2 )
+      |                                        ^~~
+abc/src/misc/vec/vecWrd.h:1147:45: 错误：‘word’在此作用域中尚未声明
+ 1147 | static int Vec_WrdSortCompare1( word * pp1, word * pp2 )
+      |                                             ^~~~
+abc/src/misc/vec/vecWrd.h:1147:52: 错误：‘pp2’在此作用域中尚未声明
+ 1147 | static int Vec_WrdSortCompare1( word * pp1, word * pp2 )
+      |                                                    ^~~
+abc/src/misc/vec/vecWrd.h:1147:56: 错误：expression list treated as compound expression in initializer [-fpermissive]
+ 1147 | static int Vec_WrdSortCompare1( word * pp1, word * pp2 )
+      |                                                        ^
+abc/src/misc/vec/vecWrd.h:1168:33: 错误：‘word’在此作用域中尚未声明
+ 1168 | static int Vec_WrdSortCompare2( word * pp1, word * pp2 )
+      |                                 ^~~~
+abc/src/misc/vec/vecWrd.h:1168:40: 错误：‘pp1’在此作用域中尚未声明
+ 1168 | static int Vec_WrdSortCompare2( word * pp1, word * pp2 )
+      |                                        ^~~
+abc/src/misc/vec/vecWrd.h:1168:45: 错误：‘word’在此作用域中尚未声明
+ 1168 | static int Vec_WrdSortCompare2( word * pp1, word * pp2 )
+      |                                             ^~~~
+abc/src/misc/vec/vecWrd.h:1168:52: 错误：‘pp2’在此作用域中尚未声明
+ 1168 | static int Vec_WrdSortCompare2( word * pp1, word * pp2 )
+      |                                                    ^~~
+abc/src/misc/vec/vecWrd.h:1168:56: 错误：expression list treated as compound expression in initializer [-fpermissive]
+ 1168 | static int Vec_WrdSortCompare2( word * pp1, word * pp2 )
+      |                                                        ^
+abc/src/misc/vec/vecWrd.h: In function ‘void Vec_WrdSort(Vec_Wrd_t*, int)’:
+abc/src/misc/vec/vecWrd.h:1192:27: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+ 1192 |         qsort( (void *)p->pArray, (size_t)p->nSize, sizeof(word),
+      |                           ^~~~~~
+abc/src/misc/vec/vecWrd.h:1192:60: 错误：‘word’在此作用域中尚未声明
+ 1192 |         qsort( (void *)p->pArray, (size_t)p->nSize, sizeof(word),
+      |                                                            ^~~~
+abc/src/misc/vec/vecWrd.h:1193:17: 警告：将一个整数转换为大小不同的指针 [-Wint-to-pointer-cast]
+ 1193 |                 (int (*)(const void *, const void *)) Vec_WrdSortCompare2 );
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+abc/src/misc/vec/vecWrd.h:1195:27: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+ 1195 |         qsort( (void *)p->pArray, (size_t)p->nSize, sizeof(word),
+      |                           ^~~~~~
+abc/src/misc/vec/vecWrd.h:1195:60: 错误：‘word’在此作用域中尚未声明
+ 1195 |         qsort( (void *)p->pArray, (size_t)p->nSize, sizeof(word),
+      |                                                            ^~~~
+abc/src/misc/vec/vecWrd.h:1196:17: 警告：将一个整数转换为大小不同的指针 [-Wint-to-pointer-cast]
+ 1196 |                 (int (*)(const void *, const void *)) Vec_WrdSortCompare1 );
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+abc/src/misc/vec/vecWrd.h: In function ‘void Vec_WrdUniqify(Vec_Wrd_t*)’:
+abc/src/misc/vec/vecWrd.h:1217:17: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+ 1217 |         if ( p->pArray[i] != p->pArray[i-1] )
+      |                 ^~~~~~
+abc/src/misc/vec/vecWrd.h:1217:33: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+ 1217 |         if ( p->pArray[i] != p->pArray[i-1] )
+      |                                 ^~~~~~
+abc/src/misc/vec/vecWrd.h:1218:16: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+ 1218 |             p->pArray[k++] = p->pArray[i];
+      |                ^~~~~~
+abc/src/misc/vec/vecWrd.h:1218:33: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+ 1218 |             p->pArray[k++] = p->pArray[i];
+      |                                 ^~~~~~
+abc/src/misc/vec/vecWrd.h: In function ‘int Vec_WrdTwoCountCommon(Vec_Wrd_t*, Vec_Wrd_t*)’:
+abc/src/misc/vec/vecWrd.h:1259:5: 错误：‘word’在此作用域中尚未声明
+ 1259 |     word * pBeg1 = vArr1->pArray;
+      |     ^~~~
+abc/src/misc/vec/vecWrd.h:1259:12: 错误：‘pBeg1’在此作用域中尚未声明
+ 1259 |     word * pBeg1 = vArr1->pArray;
+      |            ^~~~~
+abc/src/misc/vec/vecWrd.h:1259:27: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+ 1259 |     word * pBeg1 = vArr1->pArray;
+      |                           ^~~~~~
+abc/src/misc/vec/vecWrd.h:1260:12: 错误：‘pBeg2’在此作用域中尚未声明
+ 1260 |     word * pBeg2 = vArr2->pArray;
+      |            ^~~~~
+abc/src/misc/vec/vecWrd.h:1260:27: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+ 1260 |     word * pBeg2 = vArr2->pArray;
+      |                           ^~~~~~
+abc/src/misc/vec/vecWrd.h:1261:12: 错误：‘pEnd1’在此作用域中尚未声明
+ 1261 |     word * pEnd1 = vArr1->pArray + vArr1->nSize;
+      |            ^~~~~
+abc/src/misc/vec/vecWrd.h:1261:27: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+ 1261 |     word * pEnd1 = vArr1->pArray + vArr1->nSize;
+      |                           ^~~~~~
+abc/src/misc/vec/vecWrd.h:1262:12: 错误：‘pEnd2’在此作用域中尚未声明
+ 1262 |     word * pEnd2 = vArr2->pArray + vArr2->nSize;
+      |            ^~~~~
+abc/src/misc/vec/vecWrd.h:1262:27: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+ 1262 |     word * pEnd2 = vArr2->pArray + vArr2->nSize;
+      |                           ^~~~~~
+abc/src/misc/vec/vecWrd.h: 在全局域：
+abc/src/misc/vec/vecWrd.h:1287:40: 错误：‘word’在此作用域中尚未声明
+ 1287 | static int Vec_WrdSortCompareUnsigned( word * pp1, word * pp2 )
+      |                                        ^~~~
+abc/src/misc/vec/vecWrd.h:1287:47: 错误：‘pp1’在此作用域中尚未声明
+ 1287 | static int Vec_WrdSortCompareUnsigned( word * pp1, word * pp2 )
+      |                                               ^~~
+abc/src/misc/vec/vecWrd.h:1287:52: 错误：‘word’在此作用域中尚未声明
+ 1287 | static int Vec_WrdSortCompareUnsigned( word * pp1, word * pp2 )
+      |                                                    ^~~~
+abc/src/misc/vec/vecWrd.h:1287:59: 错误：‘pp2’在此作用域中尚未声明
+ 1287 | static int Vec_WrdSortCompareUnsigned( word * pp1, word * pp2 )
+      |                                                           ^~~
+abc/src/misc/vec/vecWrd.h:1287:63: 错误：expression list treated as compound expression in initializer [-fpermissive]
+ 1287 | static int Vec_WrdSortCompareUnsigned( word * pp1, word * pp2 )
+      |                                                               ^
+abc/src/misc/vec/vecWrd.h: In function ‘void Vec_WrdSortUnsigned(Vec_Wrd_t*)’:
+abc/src/misc/vec/vecWrd.h:1309:23: 错误：‘Vec_Wrd_t’ {aka ‘struct Vec_Wrd_t_’} has no member named ‘pArray’
+ 1309 |     qsort( (void *)p->pArray, (size_t)p->nSize, sizeof(word),
+      |                       ^~~~~~
+abc/src/misc/vec/vecWrd.h:1309:56: 错误：‘word’在此作用域中尚未声明
+ 1309 |     qsort( (void *)p->pArray, (size_t)p->nSize, sizeof(word),
+      |                                                        ^~~~
+abc/src/misc/vec/vecWrd.h:1310:13: 警告：将一个整数转换为大小不同的指针 [-Wint-to-pointer-cast]
+ 1310 |             (int (*)(const void *, const void *)) Vec_WrdSortCompareUnsigned );
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+abc/src/misc/vec/vecWrd.h: In function ‘void Vec_WrdAppend(Vec_Wrd_t*, Vec_Wrd_t*)’:
+abc/src/misc/vec/vecWrd.h:1327:5: 错误：‘word’在此作用域中尚未声明
+ 1327 |     word Entry; int i;
+      |     ^~~~
+abc/src/misc/vec/vecWrd.h:1328:33: 错误：‘Entry’在此作用域中尚未声明
+ 1328 |     Vec_WrdForEachEntry( vVec2, Entry, i )
+      |                                 ^~~~~
+abc/src/misc/vec/vecWrd.h:55:48: 附注：in definition of macro ‘Vec_WrdForEachEntry’
+   55 |     for ( i = 0; (i < Vec_WrdSize(vVec)) && (((Entry) = Vec_WrdEntry(vVec, i)), 1); i++ )
+      |                                                ^~~~~
+abc/src/misc/vec/vecWrd.h:55:57: 错误：‘Vec_WrdEntry’ was not declared in this scope; did you mean ‘Vec_WrdSetEntry’?
+   55 |     for ( i = 0; (i < Vec_WrdSize(vVec)) && (((Entry) = Vec_WrdEntry(vVec, i)), 1); i++ )
+      |                                                         ^~~~~~~~~~~~
+abc/src/misc/vec/vecWrd.h:1328:5: 附注：in expansion of macro ‘Vec_WrdForEachEntry’
+ 1328 |     Vec_WrdForEachEntry( vVec2, Entry, i )
+      |     ^~~~~~~~~~~~~~~~~~~
+abc/src/misc/vec/vecWrd.h: 在全局域：
+abc/src/misc/vec/vecWrd.h:1343:54: 错误：‘word’未声明
+ 1343 | static inline void Vec_WrdDumpBoolOne( FILE * pFile, word * pSim, int nBits, int fReverse )
+      |                                                      ^~~~
+abc/src/misc/vec/vecWrd.h: In function ‘void Vec_WrdDumpBool(char*, Vec_Wrd_t*, int, int, int, int)’:
+abc/src/misc/vec/vecWrd.h:1365:36: 错误：‘Vec_WrdEntryP’ was not declared in this scope; did you mean ‘Vec_StrEntryP’?
+ 1365 |         Vec_WrdDumpBoolOne( pFile, Vec_WrdEntryP(p, i*nWords), nBits, fReverse );
+      |                                    ^~~~~~~~~~~~~
+      |                                    Vec_StrEntryP
+abc/src/misc/vec/vecWrd.h: In function ‘void Vec_WrdPrintBin(Vec_Wrd_t*, int)’:
+abc/src/misc/vec/vecWrd.h:1389:53: 错误：‘Vec_WrdEntryP’ was not declared in this scope; did you mean ‘Vec_StrEntryP’?
+ 1389 |             printf( "%d", Abc_InfoHasBit((unsigned*)Vec_WrdEntryP(p, i*nWords), k) );
+      |                                                     ^~~~~~~~~~~~~
+      |                                                     Vec_StrEntryP
+abc/src/misc/vec/vecWrd.h: 在全局域：
+abc/src/misc/vec/vecWrd.h:1403:53: 错误：‘word’未声明
+ 1403 | static inline void Vec_WrdDumpHexOne( FILE * pFile, word * pSim, int nWords )
+      |                                                     ^~~~
+abc/src/misc/vec/vecWrd.h: In function ‘void Vec_WrdPrintHex(Vec_Wrd_t*, int)’:
+abc/src/misc/vec/vecWrd.h:1422:36: 错误：‘Vec_WrdEntryP’ was not declared in this scope; did you mean ‘Vec_StrEntryP’?
+ 1422 |         Vec_WrdDumpHexOne( stdout, Vec_WrdEntryP(p, i*nWords), nWords );
+      |                                    ^~~~~~~~~~~~~
+      |                                    Vec_StrEntryP
+abc/src/misc/vec/vecWrd.h: In function ‘void Vec_WrdDumpHex(char*, Vec_Wrd_t*, int, int)’:
+abc/src/misc/vec/vecWrd.h:1435:35: 错误：‘Vec_WrdEntryP’ was not declared in this scope; did you mean ‘Vec_StrEntryP’?
+ 1435 |         Vec_WrdDumpHexOne( pFile, Vec_WrdEntryP(p, i*nWords), nWords );
+      |                                   ^~~~~~~~~~~~~
+      |                                   Vec_StrEntryP
+abc/src/misc/vec/vecWrd.h: In function ‘Vec_Wrd_t* Vec_WrdReadHex(char*, int*, int)’:
+abc/src/misc/vec/vecWrd.h:1456:37: 错误：‘word’在此作用域中尚未声明
+ 1456 |     int c, nWords = -1, nChars = 0; word Num = 0;
+      |                                     ^~~~
+abc/src/misc/vec/vecWrd.h:1472:33: 错误：‘Num’在此作用域中尚未声明
+ 1472 |                 Vec_WrdPush( p, Num );
+      |                                 ^~~
+abc/src/misc/vec/vecWrd.h:1480:9: 错误：‘Num’在此作用域中尚未声明
+ 1480 |         Num |= (word)Vec_WrdReadHexOne((char)c) << (nChars * 4);
+      |         ^~~
+abc/src/misc/vec/vecWrd.h: In function ‘void Vec_WrdDumpBin(char*, Vec_Wrd_t*, int)’:
+abc/src/misc/vec/vecWrd.h:1516:24: 错误：‘Vec_WrdArray’ was not declared in this scope; did you mean ‘Vec_WrdDupArray’?
+ 1516 |     RetValue = fwrite( Vec_WrdArray(p), 1, 8*Vec_WrdSize(p), pFile );
+      |                        ^~~~~~~~~~~~
+      |                        Vec_WrdDupArray
+abc/src/misc/vec/vecWrd.h: In function ‘Vec_Wrd_t* Vec_WrdReadBin(char*, int)’:
+abc/src/misc/vec/vecWrd.h:1548:23: 错误：‘Vec_WrdArray’ was not declared in this scope; did you mean ‘Vec_WrdDupArray’?
+ 1548 |     RetValue = fread( Vec_WrdArray(p), 1, nSize, pFile );
+      |                       ^~~~~~~~~~~~
+      |                       Vec_WrdDupArray
+In file included from abc/src/misc/vec/vec.h:38:
+abc/src/misc/vec/vecBit.h: In function ‘void Vec_BitFillExtra(Vec_Bit_t*, int, int)’:
+abc/src/misc/vec/vecBit.h:413:31: 警告：left shift of negative value [-Wshift-negative-value]
+  413 |         unsigned Mask = (~(~0 << (nSize-p->nSize)) << p->nSize);
+      |                            ~~~^~~~~~~~~~~~~~~~~~~
+abc/src/misc/vec/vecBit.h:422:47: 警告：left shift of negative value [-Wshift-negative-value]
+  422 |         unsigned Mask1 = (p->nSize & 31) ? ~0 << (p->nSize & 31) : 0;
+      |                                            ~~~^~~~~~~~~~~~~~~~~~
+abc/src/misc/vec/vecBit.h:423:49: 警告：left shift of negative value [-Wshift-negative-value]
+  423 |         unsigned Mask2 = (nSize & 31)    ? ~(~0 << (nSize & 31)) : 0;
+      |                                              ~~~^~~~~~~~~~~~~~~
+abc/src/misc/vec/vecBit.h: In function ‘int Vec_BitCount(Vec_Bit_t*)’:
+abc/src/misc/vec/vecBit.h:601:55: 警告：left shift of negative value [-Wshift-negative-value]
+  601 |         Counter += Vec_BitCountWord( pArray[i] & ~(~0 << (p->nSize & 31)) );
+      |                                                    ~~~^~~~~~~~~~~~~~~~~~
+In file included from abc/src/misc/vec/vec.h:39:
+abc/src/misc/vec/vecMem.h: 在全局域：
+abc/src/misc/vec/vecMem.h:59:5: 错误：‘word’不是一个类型名
+   59 |     word **          ppPages;     // memory pages
+      |     ^~~~
+abc/src/misc/vec/vecMem.h: In function ‘void Vec_MemFree(Vec_Mem_t*)’:
+abc/src/misc/vec/vecMem.h:109:22: 错误：‘Vec_Mem_t’ {aka ‘struct Vec_Mem_t_’} has no member named ‘ppPages’; did you mean ‘iPage’?
+  109 |         ABC_FREE( p->ppPages[i] );
+      |                      ^~~~~~~
+abc/src/misc/util/abc_global.h:266:36: 附注：in definition of macro ‘ABC_FREE’
+  266 | #define ABC_FREE(obj)            ((obj) ? (free((char *) (obj)), (obj) = 0) : 0)
+      |                                    ^~~
+abc/src/misc/vec/vecMem.h:109:22: 错误：‘Vec_Mem_t’ {aka ‘struct Vec_Mem_t_’} has no member named ‘ppPages’; did you mean ‘iPage’?
+  109 |         ABC_FREE( p->ppPages[i] );
+      |                      ^~~~~~~
+abc/src/misc/util/abc_global.h:266:59: 附注：in definition of macro ‘ABC_FREE’
+  266 | #define ABC_FREE(obj)            ((obj) ? (free((char *) (obj)), (obj) = 0) : 0)
+      |                                                           ^~~
+abc/src/misc/vec/vecMem.h:109:22: 错误：‘Vec_Mem_t’ {aka ‘struct Vec_Mem_t_’} has no member named ‘ppPages’; did you mean ‘iPage’?
+  109 |         ABC_FREE( p->ppPages[i] );
+      |                      ^~~~~~~
+abc/src/misc/util/abc_global.h:266:67: 附注：in definition of macro ‘ABC_FREE’
+  266 | #define ABC_FREE(obj)            ((obj) ? (free((char *) (obj)), (obj) = 0) : 0)
+      |                                                                   ^~~
+abc/src/misc/vec/vecMem.h:110:18: 错误：‘Vec_Mem_t’ {aka ‘struct Vec_Mem_t_’} has no member named ‘ppPages’; did you mean ‘iPage’?
+  110 |     ABC_FREE( p->ppPages );
+      |                  ^~~~~~~
+abc/src/misc/util/abc_global.h:266:36: 附注：in definition of macro ‘ABC_FREE’
+  266 | #define ABC_FREE(obj)            ((obj) ? (free((char *) (obj)), (obj) = 0) : 0)
+      |                                    ^~~
+abc/src/misc/vec/vecMem.h:110:18: 错误：‘Vec_Mem_t’ {aka ‘struct Vec_Mem_t_’} has no member named ‘ppPages’; did you mean ‘iPage’?
+  110 |     ABC_FREE( p->ppPages );
+      |                  ^~~~~~~
+abc/src/misc/util/abc_global.h:266:59: 附注：in definition of macro ‘ABC_FREE’
+  266 | #define ABC_FREE(obj)            ((obj) ? (free((char *) (obj)), (obj) = 0) : 0)
+      |                                                           ^~~
+abc/src/misc/vec/vecMem.h:110:18: 错误：‘Vec_Mem_t’ {aka ‘struct Vec_Mem_t_’} has no member named ‘ppPages’; did you mean ‘iPage’?
+  110 |     ABC_FREE( p->ppPages );
+      |                  ^~~~~~~
+abc/src/misc/util/abc_global.h:266:67: 附注：in definition of macro ‘ABC_FREE’
+  266 | #define ABC_FREE(obj)            ((obj) ? (free((char *) (obj)), (obj) = 0) : 0)
+      |                                                                   ^~~
+abc/src/misc/vec/vecMem.h: In function ‘Vec_Mem_t* Vec_MemDup(Vec_Mem_t*)’:
+abc/src/misc/vec/vecMem.h:120:51: 警告：unused parameter ‘pVec’ [-Wunused-parameter]
+  120 | static inline Vec_Mem_t * Vec_MemDup( Vec_Mem_t * pVec )
+      |                                       ~~~~~~~~~~~~^~~~
+abc/src/misc/vec/vecMem.h: In function ‘void Vec_MemFill(Vec_Mem_t*, int)’:
+abc/src/misc/vec/vecMem.h:137:45: 警告：unused parameter ‘pVec’ [-Wunused-parameter]
+  137 | static inline void Vec_MemFill( Vec_Mem_t * pVec, int nEntries )
+      |                                 ~~~~~~~~~~~~^~~~
+abc/src/misc/vec/vecMem.h:137:55: 警告：unused parameter ‘nEntries’ [-Wunused-parameter]
+  137 | static inline void Vec_MemFill( Vec_Mem_t * pVec, int nEntries )
+      |                                                   ~~~~^~~~~~~~
+abc/src/misc/vec/vecMem.h: In function ‘void Vec_MemClean(Vec_Mem_t*, int)’:
+abc/src/misc/vec/vecMem.h:140:46: 警告：unused parameter ‘pVec’ [-Wunused-parameter]
+  140 | static inline void Vec_MemClean( Vec_Mem_t * pVec, int nEntries )
+      |                                  ~~~~~~~~~~~~^~~~
+abc/src/misc/vec/vecMem.h:140:56: 警告：unused parameter ‘nEntries’ [-Wunused-parameter]
+  140 | static inline void Vec_MemClean( Vec_Mem_t * pVec, int nEntries )
+      |                                                    ~~~~^~~~~~~~
+abc/src/misc/vec/vecMem.h: In function ‘double Vec_MemMemory(Vec_Mem_t*)’:
+abc/src/misc/vec/vecMem.h:185:27: 错误：‘word’在此作用域中尚未声明
+  185 |     return (double)sizeof(word) * p->nEntrySize * (1 << p->LogPageSze) * (p->iPage + 1) + (double)sizeof(word *) * p->nPageAlloc + (double)sizeof(Vec_Mem_t);
+      |                           ^~~~
+abc/src/misc/vec/vecMem.h:185:112: 错误：expected primary-expression before ‘)’ token
+  185 |     return (double)sizeof(word) * p->nEntrySize * (1 << p->LogPageSze) * (p->iPage + 1) + (double)sizeof(word *) * p->nPageAlloc + (double)sizeof(Vec_Mem_t);
+      |                                                                                                                ^
+abc/src/misc/vec/vecMem.h: 在全局域：
+abc/src/misc/vec/vecMem.h:199:15: 错误：‘word’不是一个类型名
+  199 | static inline word * Vec_MemReadEntry( Vec_Mem_t * p, int i )
+      |               ^~~~
+abc/src/misc/vec/vecMem.h:204:15: 错误：‘word’不是一个类型名
+  204 | static inline word * Vec_MemReadEntryLast( Vec_Mem_t * p )
+      |               ^~~~
+abc/src/misc/vec/vecMem.h:209:61: 错误：‘word’未声明
+  209 | static inline void Vec_MemWriteEntry( Vec_Mem_t * p, int i, word * pEntry )
+      |                                                             ^~~~
+abc/src/misc/vec/vecMem.h: In function ‘void Vec_MemWriteEntry(Vec_Mem_t*, int, int*)’:
+abc/src/misc/vec/vecMem.h:211:5: 错误：‘word’在此作用域中尚未声明
+  211 |     word * pPlace = Vec_MemReadEntry( p, i );
+      |     ^~~~
+abc/src/misc/vec/vecMem.h:211:12: 错误：‘pPlace’在此作用域中尚未声明
+  211 |     word * pPlace = Vec_MemReadEntry( p, i );
+      |            ^~~~~~
+abc/src/misc/vec/vecMem.h:211:21: 错误：‘Vec_MemReadEntry’ was not declared in this scope; did you mean ‘Vec_MemWriteEntry’?
+  211 |     word * pPlace = Vec_MemReadEntry( p, i );
+      |                     ^~~~~~~~~~~~~~~~
+      |                     Vec_MemWriteEntry
+abc/src/misc/vec/vecMem.h: 在全局域：
+abc/src/misc/vec/vecMem.h:214:15: 错误：‘word’不是一个类型名
+  214 | static inline word * Vec_MemGetEntry( Vec_Mem_t * p, int i )
+      |               ^~~~
+abc/src/misc/vec/vecMem.h:236:59: 错误：‘word’未声明
+  236 | static inline void Vec_MemSetEntry( Vec_Mem_t * p, int i, word * pEntry )
+      |                                                           ^~~~
+abc/src/misc/vec/vecMem.h: In function ‘void Vec_MemSetEntry(Vec_Mem_t*, int, int*)’:
+abc/src/misc/vec/vecMem.h:238:5: 错误：‘word’在此作用域中尚未声明
+  238 |     word * pPlace = Vec_MemGetEntry( p, i );
+      |     ^~~~
+abc/src/misc/vec/vecMem.h:238:12: 错误：‘pPlace’在此作用域中尚未声明
+  238 |     word * pPlace = Vec_MemGetEntry( p, i );
+      |            ^~~~~~
+abc/src/misc/vec/vecMem.h:238:21: 错误：‘Vec_MemGetEntry’ was not declared in this scope; did you mean ‘Vec_MemSetEntry’?
+  238 |     word * pPlace = Vec_MemGetEntry( p, i );
+      |                     ^~~~~~~~~~~~~~~
+      |                     Vec_MemSetEntry
+abc/src/misc/vec/vecMem.h: 在全局域：
+abc/src/misc/vec/vecMem.h:241:48: 错误：‘word’未声明
+  241 | static inline void Vec_MemPush( Vec_Mem_t * p, word * pEntry )
+      |                                                ^~~~
+abc/src/misc/vec/vecMem.h: In function ‘void Vec_MemPush(Vec_Mem_t*, int*)’:
+abc/src/misc/vec/vecMem.h:243:5: 错误：‘word’在此作用域中尚未声明
+  243 |     word * pPlace = Vec_MemGetEntry( p, p->nEntries );
+      |     ^~~~
+abc/src/misc/vec/vecMem.h:243:12: 错误：‘pPlace’在此作用域中尚未声明
+  243 |     word * pPlace = Vec_MemGetEntry( p, p->nEntries );
+      |            ^~~~~~
+abc/src/misc/vec/vecMem.h:243:21: 错误：‘Vec_MemGetEntry’ was not declared in this scope; did you mean ‘Vec_MemSetEntry’?
+  243 |     word * pPlace = Vec_MemGetEntry( p, p->nEntries );
+      |                     ^~~~~~~~~~~~~~~
+      |                     Vec_MemSetEntry
+abc/src/misc/vec/vecMem.h: In function ‘void Vec_MemShrink(Vec_Mem_t*, int)’:
+abc/src/misc/vec/vecMem.h:265:22: 错误：‘Vec_Mem_t’ {aka ‘struct Vec_Mem_t_’} has no member named ‘ppPages’; did you mean ‘iPage’?
+  265 |         ABC_FREE( p->ppPages[i] );
+      |                      ^~~~~~~
+abc/src/misc/util/abc_global.h:266:36: 附注：in definition of macro ‘ABC_FREE’
+  266 | #define ABC_FREE(obj)            ((obj) ? (free((char *) (obj)), (obj) = 0) : 0)
+      |                                    ^~~
+abc/src/misc/vec/vecMem.h:265:22: 错误：‘Vec_Mem_t’ {aka ‘struct Vec_Mem_t_’} has no member named ‘ppPages’; did you mean ‘iPage’?
+  265 |         ABC_FREE( p->ppPages[i] );
+      |                      ^~~~~~~
+abc/src/misc/util/abc_global.h:266:59: 附注：in definition of macro ‘ABC_FREE’
+  266 | #define ABC_FREE(obj)            ((obj) ? (free((char *) (obj)), (obj) = 0) : 0)
+      |                                                           ^~~
+abc/src/misc/vec/vecMem.h:265:22: 错误：‘Vec_Mem_t’ {aka ‘struct Vec_Mem_t_’} has no member named ‘ppPages’; did you mean ‘iPage’?
+  265 |         ABC_FREE( p->ppPages[i] );
+      |                      ^~~~~~~
+abc/src/misc/util/abc_global.h:266:67: 附注：in definition of macro ‘ABC_FREE’
+  266 | #define ABC_FREE(obj)            ((obj) ? (free((char *) (obj)), (obj) = 0) : 0)
+      |                                                                   ^~~
+abc/src/misc/vec/vecMem.h: In function ‘void Vec_MemDump(FILE*, Vec_Mem_t*)’:
+abc/src/misc/vec/vecMem.h:289:5: 错误：‘word’在此作用域中尚未声明
+  289 |     word * pEntry;
+      |     ^~~~
+abc/src/misc/vec/vecMem.h:289:12: 错误：‘pEntry’在此作用域中尚未声明
+  289 |     word * pEntry;
+      |            ^~~~~~
+abc/src/misc/vec/vecMem.h:69:58: 错误：‘Vec_MemReadEntry’ was not declared in this scope; did you mean ‘Vec_MemSetEntry’?
+   69 |     for ( i = 0; (i < Vec_MemEntryNum(p)) && ((pEntry) = Vec_MemReadEntry(p, i)); i++ )
+      |                                                          ^~~~~~~~~~~~~~~~
+abc/src/misc/vec/vecMem.h:293:5: 附注：in expansion of macro ‘Vec_MemForEachEntry’
+  293 |     Vec_MemForEachEntry( pVec, pEntry, i )
+      |     ^~~~~~~~~~~~~~~~~~~
+abc/src/misc/vec/vecMem.h: 在全局域：
+abc/src/misc/vec/vecMem.h:326:55: 错误：‘word’未声明
+  326 | static inline unsigned Vec_MemHashKey( Vec_Mem_t * p, word * pEntry )
+      |                                                       ^~~~
+abc/src/misc/vec/vecMem.h:336:48: 错误：‘word’未声明
+  336 | static int * Vec_MemHashLookup( Vec_Mem_t * p, word * pEntry )
+      |                                                ^~~~
+abc/src/misc/vec/vecMem.h: In function ‘int* Vec_MemHashLookup(Vec_Mem_t*, int*)’:
+abc/src/misc/vec/vecMem.h:340:23: 错误：‘Vec_MemReadEntry’ was not declared in this scope; did you mean ‘Vec_MemSetEntry’?
+  340 |         if ( !memcmp( Vec_MemReadEntry(p, *pSpot), pEntry, sizeof(word) * p->nEntrySize ) ) // equal
+      |                       ^~~~~~~~~~~~~~~~
+      |                       Vec_MemSetEntry
+abc/src/misc/vec/vecMem.h:340:67: 错误：‘word’在此作用域中尚未声明
+  340 |         if ( !memcmp( Vec_MemReadEntry(p, *pSpot), pEntry, sizeof(word) * p->nEntrySize ) ) // equal
+      |                                                                   ^~~~
+abc/src/misc/vec/vecMem.h: In function ‘void Vec_MemHashResize(Vec_Mem_t*)’:
+abc/src/misc/vec/vecMem.h:359:5: 错误：‘word’在此作用域中尚未声明
+  359 |     word * pEntry;
+      |     ^~~~
+abc/src/misc/vec/vecMem.h:359:12: 错误：‘pEntry’在此作用域中尚未声明
+  359 |     word * pEntry;
+      |            ^~~~~~
+abc/src/misc/vec/vecMem.h:69:58: 错误：‘Vec_MemReadEntry’ was not declared in this scope; did you mean ‘Vec_MemSetEntry’?
+   69 |     for ( i = 0; (i < Vec_MemEntryNum(p)) && ((pEntry) = Vec_MemReadEntry(p, i)); i++ )
+      |                                                          ^~~~~~~~~~~~~~~~
+abc/src/misc/vec/vecMem.h:364:5: 附注：in expansion of macro ‘Vec_MemForEachEntry’
+  364 |     Vec_MemForEachEntry( p, pEntry, i )
+      |     ^~~~~~~~~~~~~~~~~~~
+abc/src/misc/vec/vecMem.h: 在全局域：
+abc/src/misc/vec/vecMem.h:373:46: 错误：‘word’未声明
+  373 | static int Vec_MemHashInsert( Vec_Mem_t * p, word * pEntry )
+      |                                              ^~~~
+abc/src/misc/vec/vecMem.h: In function ‘Vec_Mem_t* Vec_MemAllocForTT(int, int)’:
+abc/src/misc/vec/vecMem.h:410:5: 错误：‘word’在此作用域中尚未声明
+  410 |     word * uTruth = ABC_ALLOC( word, nWords );
+      |     ^~~~
+abc/src/misc/vec/vecMem.h:410:12: 错误：‘uTruth’在此作用域中尚未声明
+  410 |     word * uTruth = ABC_ALLOC( word, nWords );
+      |            ^~~~~~
+abc/src/misc/util/abc_global.h:263:42: 错误：expected primary-expression before ‘)’ token
+  263 | #define ABC_ALLOC(type, num)     ((type *) malloc(sizeof(type) * (size_t)(num)))
+      |                                          ^
+abc/src/misc/vec/vecMem.h:410:21: 附注：in expansion of macro ‘ABC_ALLOC’
+  410 |     word * uTruth = ABC_ALLOC( word, nWords );
+      |                     ^~~~~~~~~
+abc/src/misc/util/abc_global.h:263:44: 错误：expected ‘)’ before ‘malloc’
+  263 | #define ABC_ALLOC(type, num)     ((type *) malloc(sizeof(type) * (size_t)(num)))
+      |                                  ~         ^~~~~~
+abc/src/misc/vec/vecMem.h:410:21: 附注：in expansion of macro ‘ABC_ALLOC’
+  410 |     word * uTruth = ABC_ALLOC( word, nWords );
+      |                     ^~~~~~~~~
+abc/src/misc/vec/vecMem.h: In function ‘void Vec_MemAddMuxTT(Vec_Mem_t*, int)’:
+abc/src/misc/vec/vecMem.h:426:5: 错误：‘word’在此作用域中尚未声明
+  426 |     word * uTruth = ABC_ALLOC( word, nWords );
+      |     ^~~~
+abc/src/misc/vec/vecMem.h:426:12: 错误：‘uTruth’在此作用域中尚未声明
+  426 |     word * uTruth = ABC_ALLOC( word, nWords );
+      |            ^~~~~~
+abc/src/misc/util/abc_global.h:263:42: 错误：expected primary-expression before ‘)’ token
+  263 | #define ABC_ALLOC(type, num)     ((type *) malloc(sizeof(type) * (size_t)(num)))
+      |                                          ^
+abc/src/misc/vec/vecMem.h:426:21: 附注：in expansion of macro ‘ABC_ALLOC’
+  426 |     word * uTruth = ABC_ALLOC( word, nWords );
+      |                     ^~~~~~~~~
+abc/src/misc/util/abc_global.h:263:44: 错误：expected ‘)’ before ‘malloc’
+  263 | #define ABC_ALLOC(type, num)     ((type *) malloc(sizeof(type) * (size_t)(num)))
+      |                                  ~         ^~~~~~
+abc/src/misc/vec/vecMem.h:426:21: 附注：in expansion of macro ‘ABC_ALLOC’
+  426 |     word * uTruth = ABC_ALLOC( word, nWords );
+      |                     ^~~~~~~~~
+In file included from abc/src/base/abc/abc.h:35:
+abc/src/aig/hop/hop.h: 在全局域：
+abc/src/aig/hop/hop.h:109:5: 错误：‘abctime’不是一个类型名
+  109 |     abctime          time1;
+      |     ^~~~~~~
+abc/src/aig/hop/hop.h:110:5: 错误：‘abctime’不是一个类型名
+  110 |     abctime          time2;
+      |     ^~~~~~~
+abc/src/aig/hop/hop.h: In function ‘Hop_Obj_t* Hop_Regular(Hop_Obj_t*)’:
+abc/src/aig/hop/hop.h:126:91: 错误：‘ABC_PTRUINT_T’在此作用域中尚未声明
+  126 | static inline Hop_Obj_t *  Hop_Regular( Hop_Obj_t * p )           { return (Hop_Obj_t *)((ABC_PTRUINT_T)(p) & ~01); }
+      |                                                                                           ^~~~~~~~~~~~~
+abc/src/aig/hop/hop.h: In function ‘Hop_Obj_t* Hop_Not(Hop_Obj_t*)’:
+abc/src/aig/hop/hop.h:127:91: 错误：‘ABC_PTRUINT_T’在此作用域中尚未声明
+  127 | static inline Hop_Obj_t *  Hop_Not( Hop_Obj_t * p )               { return (Hop_Obj_t *)((ABC_PTRUINT_T)(p) ^  01); }
+      |                                                                                           ^~~~~~~~~~~~~
+abc/src/aig/hop/hop.h: In function ‘Hop_Obj_t* Hop_NotCond(Hop_Obj_t*, int)’:
+abc/src/aig/hop/hop.h:128:91: 错误：‘ABC_PTRUINT_T’在此作用域中尚未声明
+  128 | static inline Hop_Obj_t *  Hop_NotCond( Hop_Obj_t * p, int c )    { return (Hop_Obj_t *)((ABC_PTRUINT_T)(p) ^ (c)); }
+      |                                                                                           ^~~~~~~~~~~~~
+abc/src/aig/hop/hop.h: In function ‘int Hop_IsComplement(Hop_Obj_t*)’:
+abc/src/aig/hop/hop.h:129:83: 错误：‘ABC_PTRUINT_T’在此作用域中尚未声明
+  129 | static inline int          Hop_IsComplement( Hop_Obj_t * p )      { return (int)((ABC_PTRUINT_T)(p) & 01);          }
+      |                                                                                   ^~~~~~~~~~~~~
+abc/src/aig/hop/hop.h: In function ‘void Hop_ObjSetTravId(Hop_Obj_t*, int)’:
+abc/src/aig/hop/hop.h:168:117: 错误：‘ABC_PTRINT_T’在此作用域中尚未声明
+  168 | static inline void         Hop_ObjSetTravId( Hop_Obj_t * pObj, int TravId )                { pObj->pData = (void *)(ABC_PTRINT_T)TravId;                      }
+      |                                                                                                                     ^~~~~~~~~~~~
+abc/src/aig/hop/hop.h:168:68: 警告：unused parameter ‘TravId’ [-Wunused-parameter]
+  168 | static inline void         Hop_ObjSetTravId( Hop_Obj_t * pObj, int TravId )                { pObj->pData = (void *)(ABC_PTRINT_T)TravId;                      }
+      |                                                                ~~~~^~~~~~
+abc/src/aig/hop/hop.h: In function ‘void Hop_ObjSetTravIdCurrent(Hop_Man_t*, Hop_Obj_t*)’:
+abc/src/aig/hop/hop.h:169:117: 错误：‘ABC_PTRINT_T’在此作用域中尚未声明
+  169 | static inline void         Hop_ObjSetTravIdCurrent( Hop_Man_t * p, Hop_Obj_t * pObj )      { pObj->pData = (void *)(ABC_PTRINT_T)p->nTravIds;                 }
+      |                                                                                                                     ^~~~~~~~~~~~
+abc/src/aig/hop/hop.h:169:65: 警告：unused parameter ‘p’ [-Wunused-parameter]
+  169 | static inline void         Hop_ObjSetTravIdCurrent( Hop_Man_t * p, Hop_Obj_t * pObj )      { pObj->pData = (void *)(ABC_PTRINT_T)p->nTravIds;                 }
+      |                                                     ~~~~~~~~~~~~^
+abc/src/aig/hop/hop.h: In function ‘void Hop_ObjSetTravIdPrevious(Hop_Man_t*, Hop_Obj_t*)’:
+abc/src/aig/hop/hop.h:170:117: 错误：‘ABC_PTRINT_T’在此作用域中尚未声明
+  170 | static inline void         Hop_ObjSetTravIdPrevious( Hop_Man_t * p, Hop_Obj_t * pObj )     { pObj->pData = (void *)(ABC_PTRINT_T)(p->nTravIds - 1);           }
+      |                                                                                                                     ^~~~~~~~~~~~
+abc/src/aig/hop/hop.h: In function ‘int Hop_ObjIsTravIdCurrent(Hop_Man_t*, Hop_Obj_t*)’:
+abc/src/aig/hop/hop.h:171:113: 错误：‘ABC_PTRINT_T’在此作用域中尚未声明
+  171 | static inline int          Hop_ObjIsTravIdCurrent( Hop_Man_t * p, Hop_Obj_t * pObj )       { return (int)((int)(ABC_PTRINT_T)pObj->pData == p->nTravIds);     }
+      |                                                                                                                 ^~~~~~~~~~~~
+abc/src/aig/hop/hop.h:171:126: 错误：expected ‘)’ before ‘pObj’
+  171 | static inline int          Hop_ObjIsTravIdCurrent( Hop_Man_t * p, Hop_Obj_t * pObj )       { return (int)((int)(ABC_PTRINT_T)pObj->pData == p->nTravIds);     }
+      |                                                                                                          ~                   ^~~~
+      |                                                                                                                              )
+abc/src/aig/hop/hop.h:171:64: 警告：unused parameter ‘p’ [-Wunused-parameter]
+  171 | static inline int          Hop_ObjIsTravIdCurrent( Hop_Man_t * p, Hop_Obj_t * pObj )       { return (int)((int)(ABC_PTRINT_T)pObj->pData == p->nTravIds);     }
+      |                                                    ~~~~~~~~~~~~^
+abc/src/aig/hop/hop.h:171:79: 警告：unused parameter ‘pObj’ [-Wunused-parameter]
+  171 | static inline int          Hop_ObjIsTravIdCurrent( Hop_Man_t * p, Hop_Obj_t * pObj )       { return (int)((int)(ABC_PTRINT_T)pObj->pData == p->nTravIds);     }
+      |                                                                   ~~~~~~~~~~~~^~~~
+abc/src/aig/hop/hop.h: In function ‘int Hop_ObjIsTravIdPrevious(Hop_Man_t*, Hop_Obj_t*)’:
+abc/src/aig/hop/hop.h:172:113: 错误：‘ABC_PTRINT_T’在此作用域中尚未声明
+  172 | static inline int          Hop_ObjIsTravIdPrevious( Hop_Man_t * p, Hop_Obj_t * pObj )      { return (int)((int)(ABC_PTRINT_T)pObj->pData == p->nTravIds - 1); }
+      |                                                                                                                 ^~~~~~~~~~~~
+abc/src/aig/hop/hop.h:172:126: 错误：expected ‘)’ before ‘pObj’
+  172 | static inline int          Hop_ObjIsTravIdPrevious( Hop_Man_t * p, Hop_Obj_t * pObj )      { return (int)((int)(ABC_PTRINT_T)pObj->pData == p->nTravIds - 1); }
+      |                                                                                                          ~                   ^~~~
+      |                                                                                                                              )
+abc/src/aig/hop/hop.h:172:65: 警告：unused parameter ‘p’ [-Wunused-parameter]
+  172 | static inline int          Hop_ObjIsTravIdPrevious( Hop_Man_t * p, Hop_Obj_t * pObj )      { return (int)((int)(ABC_PTRINT_T)pObj->pData == p->nTravIds - 1); }
+      |                                                     ~~~~~~~~~~~~^
+abc/src/aig/hop/hop.h:172:80: 警告：unused parameter ‘pObj’ [-Wunused-parameter]
+  172 | static inline int          Hop_ObjIsTravIdPrevious( Hop_Man_t * p, Hop_Obj_t * pObj )      { return (int)((int)(ABC_PTRINT_T)pObj->pData == p->nTravIds - 1); }
+      |                                                                    ~~~~~~~~~~~~^~~~
+abc/src/aig/hop/hop.h: In function ‘int Hop_ObjTravId(Hop_Obj_t*)’:
+abc/src/aig/hop/hop.h:174:82: 错误：‘ABC_PTRINT_T’在此作用域中尚未声明
+  174 | static inline int          Hop_ObjTravId( Hop_Obj_t * pObj )      { return (int)(ABC_PTRINT_T)pObj->pData;        }
+      |                                                                                  ^~~~~~~~~~~~
+abc/src/aig/hop/hop.h:174:95: 错误：expected ‘;’ before ‘pObj’
+  174 | static inline int          Hop_ObjTravId( Hop_Obj_t * pObj )      { return (int)(ABC_PTRINT_T)pObj->pData;        }
+      |                                                                                               ^~~~
+      |                                                                                               ;
+abc/src/aig/hop/hop.h:174:101: 警告：语句不起作用 [-Wunused-value]
+  174 | static inline int          Hop_ObjTravId( Hop_Obj_t * pObj )      { return (int)(ABC_PTRINT_T)pObj->pData;        }
+      |                                                                                               ~~~~~~^~~~~
+abc/src/aig/hop/hop.h: 在全局域：
+abc/src/aig/hop/hop.h:330:8: 错误：‘word’不是一个类型名
+  330 | extern word            Hop_ManComputeTruth6( Hop_Man_t * p, Hop_Obj_t * pObj, int nVars );
+      |        ^~~~
+In file included from abc/src/base/abc/abc.h:36:
+abc/src/aig/gia/gia.h:196:5: 错误：‘word’不是一个类型名
+  196 |     word           nHashHit;      // hash table hit
+      |     ^~~~
+abc/src/aig/gia/gia.h:197:5: 错误：‘word’不是一个类型名
+  197 |     word           nHashMiss;     // hash table miss
+      |     ^~~~
+abc/src/aig/gia/gia.h:370:5: 错误：‘word’不是一个类型名
+  370 |     word           Delay;
+      |     ^~~~
+abc/src/aig/gia/gia.h:371:5: 错误：‘word’不是一个类型名
+  371 |     word           Area;
+      |     ^~~~
+abc/src/aig/gia/gia.h:372:5: 错误：‘word’不是一个类型名
+  372 |     word           Edge;
+      |     ^~~~
+abc/src/aig/gia/gia.h:373:5: 错误：‘word’不是一个类型名
+  373 |     word           Clause;
+      |     ^~~~
+abc/src/aig/gia/gia.h:374:5: 错误：‘word’不是一个类型名
+  374 |     word           Mux7;
+      |     ^~~~
+abc/src/aig/gia/gia.h:375:5: 错误：‘word’不是一个类型名
+  375 |     word           WordMapDelay;
+      |     ^~~~
+abc/src/aig/gia/gia.h:376:5: 错误：‘word’不是一个类型名
+  376 |     word           WordMapArea;
+      |     ^~~~
+abc/src/aig/gia/gia.h:377:5: 错误：‘word’不是一个类型名
+  377 |     word           WordMapDelayTarget;
+      |     ^~~~
+abc/src/aig/gia/gia.h: In function ‘Gia_Obj_t* Gia_Regular(Gia_Obj_t*)’:
+abc/src/aig/gia/gia.h:454:88: 错误：‘ABC_PTRUINT_T’在此作用域中尚未声明
+  454 | static inline Gia_Obj_t *  Gia_Regular( Gia_Obj_t * p )        { return (Gia_Obj_t *)((ABC_PTRUINT_T)(p) & ~01);                           }
+      |                                                                                        ^~~~~~~~~~~~~
+abc/src/aig/gia/gia.h: In function ‘Gia_Obj_t* Gia_Not(Gia_Obj_t*)’:
+abc/src/aig/gia/gia.h:455:88: 错误：‘ABC_PTRUINT_T’在此作用域中尚未声明
+  455 | static inline Gia_Obj_t *  Gia_Not( Gia_Obj_t * p )            { return (Gia_Obj_t *)((ABC_PTRUINT_T)(p) ^  01);                           }
+      |                                                                                        ^~~~~~~~~~~~~
+abc/src/aig/gia/gia.h: In function ‘Gia_Obj_t* Gia_NotCond(Gia_Obj_t*, int)’:
+abc/src/aig/gia/gia.h:456:88: 错误：‘ABC_PTRUINT_T’在此作用域中尚未声明
+  456 | static inline Gia_Obj_t *  Gia_NotCond( Gia_Obj_t * p, int c ) { return (Gia_Obj_t *)((ABC_PTRUINT_T)(p) ^ (c));                           }
+      |                                                                                        ^~~~~~~~~~~~~
+abc/src/aig/gia/gia.h: In function ‘int Gia_IsComplement(Gia_Obj_t*)’:
+abc/src/aig/gia/gia.h:457:80: 错误：‘ABC_PTRUINT_T’在此作用域中尚未声明
+  457 | static inline int          Gia_IsComplement( Gia_Obj_t * p )   { return (int)((ABC_PTRUINT_T)(p) & 01);                                    }
+      |                                                                                ^~~~~~~~~~~~~
+abc/src/aig/gia/gia.h: 在全局域：
+abc/src/aig/gia/gia.h:664:15: 错误：‘word’不是一个类型名
+  664 | static inline word *       Gia_ObjSimPi( Gia_Man_t * p, int PiId )             { return Vec_WrdEntryP( p->vSimsPi, PiId * Gia_ObjSimWords(p) ); }
+      |               ^~~~
+abc/src/aig/gia/gia.h:665:15: 错误：‘word’不是一个类型名
+  665 | static inline word *       Gia_ObjSim( Gia_Man_t * p, int Id )                 { return Vec_WrdEntryP( p->vSims, Id * Gia_ObjSimWords(p) );     }
+      |               ^~~~
+abc/src/aig/gia/gia.h:666:15: 错误：‘word’不是一个类型名
+  666 | static inline word *       Gia_ObjSimObj( Gia_Man_t * p, Gia_Obj_t * pObj )    { return Gia_ObjSim( p, Gia_ObjId(p, pObj) );                    }
+      |               ^~~~
+abc/src/aig/gia/gia.h:1313:8: 错误：‘word’不是一个类型名
+ 1313 | extern word                Gia_ResubToTruth6( Vec_Int_t * vResub );
+      |        ^~~~
+abc/src/aig/gia/gia.h:1578:8: 错误：‘word’不是一个类型名
+ 1578 | extern word *              Gia_ManCountFraction( Gia_Man_t * p, Vec_Wrd_t * vSimI, Vec_Int_t * vSupp, int Thresh, int fVerbose, int * pCare );
+      |        ^~~~
+abc/src/aig/gia/gia.h:1715:8: 错误：‘word’不是一个类型名
+ 1715 | extern word                Gia_LutComputeTruth6( Gia_Man_t * p, int iObj, Vec_Wrd_t * vTruths );
+      |        ^~~~
+abc/src/aig/gia/gia.h:1716:8: 错误：‘word’不是一个类型名
+ 1716 | extern word                Gia_ObjComputeTruthTable6Lut( Gia_Man_t * p, int iObj, Vec_Wrd_t * vTemp );
+      |        ^~~~
+abc/src/aig/gia/gia.h:1717:8: 错误：‘word’不是一个类型名
+ 1717 | extern word                Gia_ObjComputeTruthTable6( Gia_Man_t * p, Gia_Obj_t * pObj, Vec_Int_t * vSupp, Vec_Wrd_t * vTruths );
+      |        ^~~~
+abc/src/aig/gia/gia.h:1718:8: 错误：‘word’不是一个类型名
+ 1718 | extern word                Gia_ObjComputeTruth6Cis( Gia_Man_t * p, int iLit, Vec_Int_t * vSupp, Vec_Wrd_t * vTemp );
+      |        ^~~~
+abc/src/aig/gia/gia.h:1720:8: 错误：‘word’不是一个类型名
+ 1720 | extern word *              Gia_ObjComputeTruthTable( Gia_Man_t * p, Gia_Obj_t * pObj );
+      |        ^~~~
+abc/src/aig/gia/gia.h:1723:8: 错误：‘word’不是一个类型名
+ 1723 | extern word *              Gia_ObjComputeTruthTableCut( Gia_Man_t * p, Gia_Obj_t * pObj, Vec_Int_t * vLeaves );
+      |        ^~~~
+abc/src/aig/gia/gia.h:1728:8: 错误：‘word’不是一个类型名
+ 1728 | extern word                Gia_ManRandomW( int fReset );
+      |        ^~~~
+In file included from abc/src/base/abc/abc.h:42:
+abc/src/misc/extra/extra.h:215:8: 错误：‘word’不是一个类型名
+  215 | extern word        Extra_Truth6MinimumExact( word t, int * pComp, int * pPerm );
+      |        ^~~~
+abc/src/misc/extra/extra.h:216:8: 错误：‘word’不是一个类型名
+  216 | extern word        Extra_Truth6MinimumHeuristic( word t );
+      |        ^~~~
+abc/src/misc/extra/extra.h:234:8: 错误：‘word’不是一个类型名
+  234 | extern word        Sdm_ManReadDsdTruth( Sdm_Man_t * p, int iDsd );
+      |        ^~~~
+abc/src/misc/extra/extra.h:398:8: 错误：‘abctime’不是一个类型名
+  398 | extern abctime       Extra_CpuTime();
+      |        ^~~~~~~
+abc/src/base/abc/abc.h: In function ‘int Abc_ObjIsComplement(Abc_Obj_t*)’:
+abc/src/base/abc/abc.h:325:87: 错误：‘ABC_PTRUINT_T’在此作用域中尚未声明
+  325 | static inline int         Abc_ObjIsComplement( Abc_Obj_t * p )       { return (int )((ABC_PTRUINT_T)p & (ABC_PTRUINT_T)01);             }
+      |                                                                                       ^~~~~~~~~~~~~
+abc/src/base/abc/abc.h:325:101: 错误：expected ‘)’ before ‘p’
+  325 | static inline int         Abc_ObjIsComplement( Abc_Obj_t * p )       { return (int )((ABC_PTRUINT_T)p & (ABC_PTRUINT_T)01);             }
+      |                                                                                     ~               ^
+      |                                                                                                     )
+abc/src/base/abc/abc.h:325:60: 警告：unused parameter ‘p’ [-Wunused-parameter]
+  325 | static inline int         Abc_ObjIsComplement( Abc_Obj_t * p )       { return (int )((ABC_PTRUINT_T)p & (ABC_PTRUINT_T)01);             }
+      |                                                ~~~~~~~~~~~~^
+abc/src/base/abc/abc.h: In function ‘Abc_Obj_t* Abc_ObjRegular(Abc_Obj_t*)’:
+abc/src/base/abc/abc.h:326:94: 错误：‘ABC_PTRUINT_T’在此作用域中尚未声明
+  326 | static inline Abc_Obj_t * Abc_ObjRegular( Abc_Obj_t * p )            { return (Abc_Obj_t *)((ABC_PTRUINT_T)p & ~(ABC_PTRUINT_T)01);     }
+      |                                                                                              ^~~~~~~~~~~~~
+abc/src/base/abc/abc.h:326:108: 错误：expected ‘)’ before ‘p’
+  326 | static inline Abc_Obj_t * Abc_ObjRegular( Abc_Obj_t * p )            { return (Abc_Obj_t *)((ABC_PTRUINT_T)p & ~(ABC_PTRUINT_T)01);     }
+      |                                                                                            ~               ^
+      |                                                                                                            )
+abc/src/base/abc/abc.h:326:55: 警告：unused parameter ‘p’ [-Wunused-parameter]
+  326 | static inline Abc_Obj_t * Abc_ObjRegular( Abc_Obj_t * p )            { return (Abc_Obj_t *)((ABC_PTRUINT_T)p & ~(ABC_PTRUINT_T)01);     }
+      |                                           ~~~~~~~~~~~~^
+abc/src/base/abc/abc.h: In function ‘Abc_Obj_t* Abc_ObjNot(Abc_Obj_t*)’:
+abc/src/base/abc/abc.h:327:94: 错误：‘ABC_PTRUINT_T’在此作用域中尚未声明
+  327 | static inline Abc_Obj_t * Abc_ObjNot( Abc_Obj_t * p )                { return (Abc_Obj_t *)((ABC_PTRUINT_T)p ^  (ABC_PTRUINT_T)01);     }
+      |                                                                                              ^~~~~~~~~~~~~
+abc/src/base/abc/abc.h:327:108: 错误：expected ‘)’ before ‘p’
+  327 | static inline Abc_Obj_t * Abc_ObjNot( Abc_Obj_t * p )                { return (Abc_Obj_t *)((ABC_PTRUINT_T)p ^  (ABC_PTRUINT_T)01);     }
+      |                                                                                            ~               ^
+      |                                                                                                            )
+abc/src/base/abc/abc.h:327:51: 警告：unused parameter ‘p’ [-Wunused-parameter]
+  327 | static inline Abc_Obj_t * Abc_ObjNot( Abc_Obj_t * p )                { return (Abc_Obj_t *)((ABC_PTRUINT_T)p ^  (ABC_PTRUINT_T)01);     }
+      |                                       ~~~~~~~~~~~~^
+abc/src/base/abc/abc.h: In function ‘Abc_Obj_t* Abc_ObjNotCond(Abc_Obj_t*, int)’:
+abc/src/base/abc/abc.h:328:94: 错误：‘ABC_PTRUINT_T’在此作用域中尚未声明
+  328 | static inline Abc_Obj_t * Abc_ObjNotCond( Abc_Obj_t * p, int c )     { return (Abc_Obj_t *)((ABC_PTRUINT_T)p ^  (ABC_PTRUINT_T)(c!=0)); }
+      |                                                                                              ^~~~~~~~~~~~~
+abc/src/base/abc/abc.h:328:108: 错误：expected ‘)’ before ‘p’
+  328 | static inline Abc_Obj_t * Abc_ObjNotCond( Abc_Obj_t * p, int c )     { return (Abc_Obj_t *)((ABC_PTRUINT_T)p ^  (ABC_PTRUINT_T)(c!=0)); }
+      |                                                                                            ~               ^
+      |                                                                                                            )
+abc/src/base/abc/abc.h:328:55: 警告：unused parameter ‘p’ [-Wunused-parameter]
+  328 | static inline Abc_Obj_t * Abc_ObjNotCond( Abc_Obj_t * p, int c )     { return (Abc_Obj_t *)((ABC_PTRUINT_T)p ^  (ABC_PTRUINT_T)(c!=0)); }
+      |                                           ~~~~~~~~~~~~^
+abc/src/base/abc/abc.h:328:62: 警告：unused parameter ‘c’ [-Wunused-parameter]
+  328 | static inline Abc_Obj_t * Abc_ObjNotCond( Abc_Obj_t * p, int c )     { return (Abc_Obj_t *)((ABC_PTRUINT_T)p ^  (ABC_PTRUINT_T)(c!=0)); }
+      |                                                          ~~~~^
+abc/src/base/abc/abc.h: In function ‘int Abc_LatchInit(Abc_Obj_t*)’:
+abc/src/base/abc/abc.h:428:117: 错误：‘ABC_PTRINT_T’在此作用域中尚未声明
+  428 | static inline int         Abc_LatchInit( Abc_Obj_t * pLatch )        { assert(Abc_ObjIsLatch(pLatch)); return (int)(ABC_PTRINT_T)pLatch->pData;                     }
+      |                                                                                                                     ^~~~~~~~~~~~
+abc/src/base/abc/abc.h:428:130: 错误：expected ‘;’ before ‘pLatch’
+  428 | static inline int         Abc_LatchInit( Abc_Obj_t * pLatch )        { assert(Abc_ObjIsLatch(pLatch)); return (int)(ABC_PTRINT_T)pLatch->pData;                     }
+      |                                                                                                                                  ^~~~~~
+      |                                                                                                                                  ;
+abc/src/base/abc/abc.h:428:138: 警告：语句不起作用 [-Wunused-value]
+  428 | static inline int         Abc_LatchInit( Abc_Obj_t * pLatch )        { assert(Abc_ObjIsLatch(pLatch)); return (int)(ABC_PTRINT_T)pLatch->pData;                     }
+      |                                                                                                                                  ~~~~~~~~^~~~~
+abc/src/base/abc/abc.h: 在全局域：
+abc/src/base/abc/abc.h:650:35: 警告：‘Abc_ExactBuildNode’已初始化，却又被声明为‘extern’
+  650 | extern ABC_DLL Abc_Obj_t *        Abc_ExactBuildNode( word * pTruth, int nVars, int * pArrTimeProfile, Abc_Obj_t ** pFanins, Abc_Ntk_t * pNtk );
+      |                                   ^~~~~~~~~~~~~~~~~~
+abc/src/base/abc/abc.h:650:55: 错误：‘word’在此作用域中尚未声明
+  650 | extern ABC_DLL Abc_Obj_t *        Abc_ExactBuildNode( word * pTruth, int nVars, int * pArrTimeProfile, Abc_Obj_t ** pFanins, Abc_Ntk_t * pNtk );
+      |                                                       ^~~~
+abc/src/base/abc/abc.h:650:62: 错误：‘pTruth’在此作用域中尚未声明
+  650 | extern ABC_DLL Abc_Obj_t *        Abc_ExactBuildNode( word * pTruth, int nVars, int * pArrTimeProfile, Abc_Obj_t ** pFanins, Abc_Ntk_t * pNtk );
+      |                                                              ^~~~~~
+abc/src/base/abc/abc.h:650:70: 错误：expected primary-expression before ‘int’
+  650 | extern ABC_DLL Abc_Obj_t *        Abc_ExactBuildNode( word * pTruth, int nVars, int * pArrTimeProfile, Abc_Obj_t ** pFanins, Abc_Ntk_t * pNtk );
+      |                                                                      ^~~
+abc/src/base/abc/abc.h:650:81: 错误：expected primary-expression before ‘int’
+  650 | extern ABC_DLL Abc_Obj_t *        Abc_ExactBuildNode( word * pTruth, int nVars, int * pArrTimeProfile, Abc_Obj_t ** pFanins, Abc_Ntk_t * pNtk );
+      |                                                                                 ^~~
+abc/src/base/abc/abc.h:650:114: 错误：expected primary-expression before ‘*’ token
+  650 | extern ABC_DLL Abc_Obj_t *        Abc_ExactBuildNode( word * pTruth, int nVars, int * pArrTimeProfile, Abc_Obj_t ** pFanins, Abc_Ntk_t * pNtk );
+      |                                                                                                                  ^
+abc/src/base/abc/abc.h:650:117: 错误：‘pFanins’ was not declared in this scope; did you mean ‘panic’?
+  650 | extern ABC_DLL Abc_Obj_t *        Abc_ExactBuildNode( word * pTruth, int nVars, int * pArrTimeProfile, Abc_Obj_t ** pFanins, Abc_Ntk_t * pNtk );
+      |                                                                                                                     ^~~~~~~
+      |                                                                                                                     panic
+abc/src/base/abc/abc.h:650:136: 错误：expected primary-expression before ‘*’ token
+  650 | extern ABC_DLL Abc_Obj_t *        Abc_ExactBuildNode( word * pTruth, int nVars, int * pArrTimeProfile, Abc_Obj_t ** pFanins, Abc_Ntk_t * pNtk );
+      |                                                                                                                                        ^
+abc/src/base/abc/abc.h:650:138: 错误：‘pNtk’在此作用域中尚未声明
+  650 | extern ABC_DLL Abc_Obj_t *        Abc_ExactBuildNode( word * pTruth, int nVars, int * pArrTimeProfile, Abc_Obj_t ** pFanins, Abc_Ntk_t * pNtk );
+      |                                                                                                                                          ^~~~
+abc/src/base/abc/abc.h:650:143: 错误：expression list treated as compound expression in initializer [-fpermissive]
+  650 | extern ABC_DLL Abc_Obj_t *        Abc_ExactBuildNode( word * pTruth, int nVars, int * pArrTimeProfile, Abc_Obj_t ** pFanins, Abc_Ntk_t * pNtk );
+      |                                                                                                                                               ^
+abc/src/base/abc/abc.h:651:35: 警告：‘Abc_NtkFindExact’已初始化，却又被声明为‘extern’
+  651 | extern ABC_DLL Abc_Ntk_t *        Abc_NtkFindExact( word * pTruth, int nVars, int nFunc, int nMaxDepth, int * pArrivalTimes, int nBTLimit, int nStartGates, int fVerbose );
+      |                                   ^~~~~~~~~~~~~~~~
+abc/src/base/abc/abc.h:651:53: 错误：‘word’在此作用域中尚未声明
+  651 | extern ABC_DLL Abc_Ntk_t *        Abc_NtkFindExact( word * pTruth, int nVars, int nFunc, int nMaxDepth, int * pArrivalTimes, int nBTLimit, int nStartGates, int fVerbose );
+      |                                                     ^~~~
+abc/src/base/abc/abc.h:651:60: 错误：‘pTruth’在此作用域中尚未声明
+  651 | extern ABC_DLL Abc_Ntk_t *        Abc_NtkFindExact( word * pTruth, int nVars, int nFunc, int nMaxDepth, int * pArrivalTimes, int nBTLimit, int nStartGates, int fVerbose );
+      |                                                            ^~~~~~
+abc/src/base/abc/abc.h:651:68: 错误：expected primary-expression before ‘int’
+  651 | extern ABC_DLL Abc_Ntk_t *        Abc_NtkFindExact( word * pTruth, int nVars, int nFunc, int nMaxDepth, int * pArrivalTimes, int nBTLimit, int nStartGates, int fVerbose );
+      |                                                                    ^~~
+abc/src/base/abc/abc.h:651:79: 错误：expected primary-expression before ‘int’
+  651 | extern ABC_DLL Abc_Ntk_t *        Abc_NtkFindExact( word * pTruth, int nVars, int nFunc, int nMaxDepth, int * pArrivalTimes, int nBTLimit, int nStartGates, int fVerbose );
+      |                                                                               ^~~
+abc/src/base/abc/abc.h:651:90: 错误：expected primary-expression before ‘int’
+  651 | extern ABC_DLL Abc_Ntk_t *        Abc_NtkFindExact( word * pTruth, int nVars, int nFunc, int nMaxDepth, int * pArrivalTimes, int nBTLimit, int nStartGates, int fVerbose );
+      |                                                                                          ^~~
+abc/src/base/abc/abc.h:651:105: 错误：expected primary-expression before ‘int’
+  651 | extern ABC_DLL Abc_Ntk_t *        Abc_NtkFindExact( word * pTruth, int nVars, int nFunc, int nMaxDepth, int * pArrivalTimes, int nBTLimit, int nStartGates, int fVerbose );
+      |                                                                                                         ^~~
+abc/src/base/abc/abc.h:651:126: 错误：expected primary-expression before ‘int’
+  651 | extern ABC_DLL Abc_Ntk_t *        Abc_NtkFindExact( word * pTruth, int nVars, int nFunc, int nMaxDepth, int * pArrivalTimes, int nBTLimit, int nStartGates, int fVerbose );
+      |                                                                                                                              ^~~
+abc/src/base/abc/abc.h:651:140: 错误：expected primary-expression before ‘int’
+  651 | extern ABC_DLL Abc_Ntk_t *        Abc_NtkFindExact( word * pTruth, int nVars, int nFunc, int nMaxDepth, int * pArrivalTimes, int nBTLimit, int nStartGates, int fVerbose );
+      |                                                                                                                                            ^~~
+abc/src/base/abc/abc.h:651:157: 错误：expected primary-expression before ‘int’
+  651 | extern ABC_DLL Abc_Ntk_t *        Abc_NtkFindExact( word * pTruth, int nVars, int nFunc, int nMaxDepth, int * pArrivalTimes, int nBTLimit, int nStartGates, int fVerbose );
+      |                                                                                                                                                             ^~~
+abc/src/base/abc/abc.h:651:170: 错误：expression list treated as compound expression in initializer [-fpermissive]
+  651 | extern ABC_DLL Abc_Ntk_t *        Abc_NtkFindExact( word * pTruth, int nVars, int nFunc, int nMaxDepth, int * pArrivalTimes, int nBTLimit, int nStartGates, int fVerbose );
+      |                                                                                                                                                                          ^
+abc/src/base/abc/abc.h:887:70: 错误：‘ABC_INT64_T’未声明
+  887 | extern ABC_DLL int                Abc_NtkMiterSat( Abc_Ntk_t * pNtk, ABC_INT64_T nConfLimit, ABC_INT64_T nInsLimit, int fVerbose, ABC_INT64_T * pNumConfs, ABC_INT64_T * pNumInspects );
+      |                                                                      ^~~~~~~~~~~
+abc/src/base/abc/abc.h:887:94: 错误：‘ABC_INT64_T’未声明
+  887 | extern ABC_DLL int                Abc_NtkMiterSat( Abc_Ntk_t * pNtk, ABC_INT64_T nConfLimit, ABC_INT64_T nInsLimit, int fVerbose, ABC_INT64_T * pNumConfs, ABC_INT64_T * pNumInspects );
+      |                                                                                              ^~~~~~~~~~~
+abc/src/base/abc/abc.h:887:131: 错误：‘ABC_INT64_T’未声明
+  887 | extern ABC_DLL int                Abc_NtkMiterSat( Abc_Ntk_t * pNtk, ABC_INT64_T nConfLimit, ABC_INT64_T nInsLimit, int fVerbose, ABC_INT64_T * pNumConfs, ABC_INT64_T * pNumInspects );
+      |                                                                                                                                   ^~~~~~~~~~~
+abc/src/base/abc/abc.h:887:156: 错误：‘ABC_INT64_T’未声明
+  887 | extern ABC_DLL int                Abc_NtkMiterSat( Abc_Ntk_t * pNtk, ABC_INT64_T nConfLimit, ABC_INT64_T nInsLimit, int fVerbose, ABC_INT64_T * pNumConfs, ABC_INT64_T * pNumInspects );
+      |                                                                                                                                                            ^~~~~~~~~~~
+abc/src/base/abc/abc.h:908:93: 错误：‘word’未声明
+  908 | extern ABC_DLL char *             Abc_SopCreateFromTruthIsop( Mem_Flex_t * pMan, int nVars, word * pTruth, Vec_Int_t * vCover );
+      |                                                                                             ^~~~
+abc/src/base/abc/abc.h:933:16: 错误：‘word’不是一个类型名
+  933 | extern ABC_DLL word               Abc_SopToTruth( char * pSop, int nInputs );
+      |                ^~~~
+abc/src/base/abc/abc.h:934:78: 错误：‘word’未声明
+  934 | extern ABC_DLL void               Abc_SopToTruth7( char * pSop, int nInputs, word r[2] );
+      |                                                                              ^~~~
+abc/src/base/abc/abc.h:935:80: 错误：‘word’未声明
+  935 | extern ABC_DLL void               Abc_SopToTruthBig( char * pSop, int nInputs, word ** pVars, word * pCube, word * pRes );
+      |                                                                                ^~~~
+abc/src/base/abc/abc.h:935:95: 错误：‘word’未声明
+  935 | extern ABC_DLL void               Abc_SopToTruthBig( char * pSop, int nInputs, word ** pVars, word * pCube, word * pRes );
+      |                                                                                               ^~~~
+abc/src/base/abc/abc.h:935:109: 错误：‘word’未声明
+  935 | extern ABC_DLL void               Abc_SopToTruthBig( char * pSop, int nInputs, word ** pVars, word * pCube, word * pRes );
+      |                                                                                                             ^~~~
+passes/cmds/verify.cc: In member function ‘void {anonymous}::VerifyPass::run_verify_po(ComparePoint&)’:
+passes/cmds/verify.cc:57:38: 警告：unused parameter ‘point’ [-Wunused-parameter]
+   57 |     void run_verify_po(ComparePoint &point)
+      |                        ~~~~~~~~~~~~~~^~~~~
+passes/cmds/verify.cc: In member function ‘void {anonymous}::VerifyPass::run_verify_dff(ComparePoint&)’:
+passes/cmds/verify.cc:62:39: 警告：unused parameter ‘point’ [-Wunused-parameter]
+   62 |     void run_verify_dff(ComparePoint &point)
+      |                         ~~~~~~~~~~~~~~^~~~~
+passes/cmds/verify.cc: In member function ‘void {anonymous}::VerifyPass::run_verify_bbox(ComparePoint&)’:
+passes/cmds/verify.cc:66:40: 警告：unused parameter ‘point’ [-Wunused-parameter]
+   66 |     void run_verify_bbox(ComparePoint &point)
+      |                          ~~~~~~~~~~~~~~^~~~~
+passes/cmds/verify.cc: In member function ‘void {anonymous}::VerifyPass::run_verify(Yosys::RTLIL::Design*, Yosys::RTLIL::Design*)’:
+passes/cmds/verify.cc:83:36: 警告：格式 ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘std::vector<ComparePoint>::size_type’ {aka ‘long unsigned int’} [-Wformat=]
+   83 |         log("Compare point size : %d", all_compare_point.size());
+      |                                   ~^   ~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                    |                         |
+      |                                    int                       std::vector<ComparePoint>::size_type {aka long unsigned int}
+      |                                   %ld
+passes/cmds/verify.cc: In member function ‘void {anonymous}::VerifyPass::test_abc()’:
+passes/cmds/verify.cc:137:45: 错误：对‘ABC_NTK_STRASH’的引用有歧义
+  137 |         Abc_Ntk_t * gold_aig = Abc_NtkAlloc(ABC_NTK_STRASH, ABC_FUNC_AIG, 1);
+      |                                             ^~~~~~~~~~~~~~
+./kernel/abcutil.h:14:9: 附注：备选为： ‘abc::Abc_NtkType_t abc::ABC_NTK_STRASH’
+   14 |         ABC_NTK_STRASH,     // 3:  structurally hashed AIG (two input AND gates with c-attributes on edges)
+      |         ^~~~~~~~~~~~~~
+abc/src/base/abc/abc.h:58:5: 附注：         ‘Abc_NtkType_t ABC_NTK_STRASH’
+   58 |     ABC_NTK_STRASH,     // 3:  structurally hashed AIG (two input AND gates with c-attributes on edges)
+      |     ^~~~~~~~~~~~~~
+passes/cmds/verify.cc:137:61: 错误：对‘ABC_FUNC_AIG’的引用有歧义
+  137 |         Abc_Ntk_t * gold_aig = Abc_NtkAlloc(ABC_NTK_STRASH, ABC_FUNC_AIG, 1);
+      |                                                             ^~~~~~~~~~~~
+./kernel/abcutil.h:23:9: 附注：备选为： ‘abc::Abc_NtkFunc_t abc::ABC_FUNC_AIG’
+   23 |         ABC_FUNC_AIG,       // 3:  and-inverter graphs
+      |         ^~~~~~~~~~~~
+abc/src/base/abc/abc.h:67:5: 附注：         ‘Abc_NtkFunc_t ABC_FUNC_AIG’
+   67 |     ABC_FUNC_AIG,       // 3:  and-inverter graphs
+      |     ^~~~~~~~~~~~
+passes/cmds/verify.cc:138:45: 错误：对‘ABC_NTK_STRASH’的引用有歧义
+  138 |         Abc_Ntk_t * gate_aig = Abc_NtkAlloc(ABC_NTK_STRASH, ABC_FUNC_AIG, 1);
+      |                                             ^~~~~~~~~~~~~~
+./kernel/abcutil.h:14:9: 附注：备选为： ‘abc::Abc_NtkType_t abc::ABC_NTK_STRASH’
+   14 |         ABC_NTK_STRASH,     // 3:  structurally hashed AIG (two input AND gates with c-attributes on edges)
+      |         ^~~~~~~~~~~~~~
+abc/src/base/abc/abc.h:58:5: 附注：         ‘Abc_NtkType_t ABC_NTK_STRASH’
+   58 |     ABC_NTK_STRASH,     // 3:  structurally hashed AIG (two input AND gates with c-attributes on edges)
+      |     ^~~~~~~~~~~~~~
+passes/cmds/verify.cc:138:61: 错误：对‘ABC_FUNC_AIG’的引用有歧义
+  138 |         Abc_Ntk_t * gate_aig = Abc_NtkAlloc(ABC_NTK_STRASH, ABC_FUNC_AIG, 1);
+      |                                                             ^~~~~~~~~~~~
+./kernel/abcutil.h:23:9: 附注：备选为： ‘abc::Abc_NtkFunc_t abc::ABC_FUNC_AIG’
+   23 |         ABC_FUNC_AIG,       // 3:  and-inverter graphs
+      |         ^~~~~~~~~~~~
+abc/src/base/abc/abc.h:67:5: 附注：         ‘Abc_NtkFunc_t ABC_FUNC_AIG’
+   67 |     ABC_FUNC_AIG,       // 3:  and-inverter graphs
+      |     ^~~~~~~~~~~~
+passes/cmds/verify.cc:140:43: 错误：调用重载的‘Extra_UtilStrsav(const char [7])’有歧义
+  140 |         gold_aig->pName = Extra_UtilStrsav("golden");
+      |                           ~~~~~~~~~~~~~~~~^~~~~~~~~~
+abc/src/misc/extra/extra.h:404:22: 附注：备选： ‘char* Extra_UtilStrsav(const char*)’
+  404 | extern char *        Extra_UtilStrsav( const char *s );
+      |                      ^~~~~~~~~~~~~~~~
+./kernel/abcutil.h:99:26: 附注：备选： ‘char* abc::Extra_UtilStrsav(const char*)’
+   99 |     extern char *        Extra_UtilStrsav( const char *s );
+      |                          ^~~~~~~~~~~~~~~~
+passes/cmds/verify.cc:141:43: 错误：调用重载的‘Extra_UtilStrsav(const char [8])’有歧义
+  141 |         gate_aig->pName = Extra_UtilStrsav("Revised");
+      |                           ~~~~~~~~~~~~~~~~^~~~~~~~~~~
+abc/src/misc/extra/extra.h:404:22: 附注：备选： ‘char* Extra_UtilStrsav(const char*)’
+  404 | extern char *        Extra_UtilStrsav( const char *s );
+      |                      ^~~~~~~~~~~~~~~~
+./kernel/abcutil.h:99:26: 附注：备选： ‘char* abc::Extra_UtilStrsav(const char*)’
+   99 |     extern char *        Extra_UtilStrsav( const char *s );
+      |                          ^~~~~~~~~~~~~~~~
+passes/cmds/verify.cc:163:35: 警告：ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
+  163 |         Abc_ObjAssignName( pObjA, "A", NULL );
+      |                                   ^~~
+passes/cmds/verify.cc:164:35: 警告：ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
+  164 |         Abc_ObjAssignName( pObjB, "B", NULL );
+      |                                   ^~~
+passes/cmds/verify.cc:165:35: 警告：ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
+  165 |         Abc_ObjAssignName( pObjC, "C", NULL );
+      |                                   ^~~
+passes/cmds/verify.cc:166:33: 警告：ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
+  166 |         Abc_ObjAssignName( pPo, "O", NULL );
+      |                                 ^~~
+passes/cmds/verify.cc:175:44: 警告：ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
+  175 |         pObjA = Abc_NtkFindNode( gold_aig, "A");
+      |                                            ^~~
+passes/cmds/verify.cc:176:45: 警告：ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
+  176 |         pObjB = Abc_NtkFindNode( gold_aig , "B");
+      |                                             ^~~
+passes/cmds/verify.cc:177:45: 警告：ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
+  177 |         pObjC = Abc_NtkFindNode( gold_aig , "C");
+      |                                             ^~~
+passes/cmds/verify.cc:180:33: 警告：ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
+  180 |         Abc_ObjAssignName( pPo, "O", NULL );
+      |                                 ^~~
+abc/src/misc/vec/vecMem.h: 在全局域：
+abc/src/misc/vec/vecMem.h:373:12: 警告：‘int Vec_MemHashInsert(Vec_Mem_t*, int*)’ defined but not used [-Wunused-function]
+  373 | static int Vec_MemHashInsert( Vec_Mem_t * p, word * pEntry )
+      |            ^~~~~~~~~~~~~~~~~
+abc/src/misc/vec/vecMem.h:344:13: 警告：‘void Vec_MemHashProfile(Vec_Mem_t*)’ defined but not used [-Wunused-function]
+  344 | static void Vec_MemHashProfile( Vec_Mem_t * p )
+      |             ^~~~~~~~~~~~~~~~~~
+abc/src/misc/vec/vecWrd.h:265:27: 警告：‘Vec_WrdAllocArrayCopy’ defined but not used [-Wunused-variable]
+  265 | static inline Vec_Wrd_t * Vec_WrdAllocArrayCopy( word * pArray, int nSize )
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+abc/src/misc/vec/vecWrd.h:244:27: 警告：‘Vec_WrdAllocArray’ defined but not used [-Wunused-variable]
+  244 | static inline Vec_Wrd_t * Vec_WrdAllocArray( word * pArray, int nSize )
+      |                           ^~~~~~~~~~~~~~~~~
+abc/src/misc/util/abc_global.h:316:24: 警告：‘Abc_Wrd2Ptr’ defined but not used [-Wunused-variable]
+  316 | static inline void *   Abc_Wrd2Ptr( word i )                  { return (void *)(ABC_PTRUINT_T)i;  }
+      |                        ^~~~~~~~~~~
+abc/src/misc/util/abc_global.h:286:24: 警告：‘Abc_Word2Dbl’ defined but not used [-Wunused-variable]
+  286 | static inline double   Abc_Word2Dbl( word Num )               { union { word x; double y; } v; v.x = Num; return v.y;       }
+      |                        ^~~~~~~~~~~~
+make: *** [Makefile:761：passes/cmds/verify.o] 错误 1

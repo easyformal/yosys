@@ -1,0 +1,10 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.45+112 (git sha1 131223763, g++ 14.2.1 -Og -fPIC)
+
+-- Executing script file `run.ys' --
+ERROR: Can't open script file `run.ys' for reading: No such file or directory

@@ -23,6 +23,7 @@ public:
     Port(const std::string &name, Direction direction, Module *module = nullptr);
 
     Module *module() const;
+    void setModule(Module *module);
 
     const std::string &name() const;
 
@@ -57,6 +58,7 @@ public:
     const std::string &name() const;
 
     Module *module() const;
+    void setModule(Module *module);
 
     bool isSigned() const;
     void setIsSigned(bool newIsSigned);

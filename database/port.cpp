@@ -19,6 +19,11 @@ Module *Port::module() const
     return _module;
 }
 
+void Port::setModule(Module *module)
+{
+    _module = module;
+}
+
 const std::string &Port::name() const
 {
     return _name;
@@ -79,6 +84,10 @@ Module *PortBus::module() const
     return _module;
 }
 
+void PortBus::setModule(Module *module)
+{
+    _module = module;
+}
 bool PortBus::isSigned() const
 {
     return _isSigned;

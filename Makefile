@@ -33,7 +33,7 @@ ENABLE_PYOSYS := 0
 # other configuration flags
 ENABLE_GCOV := 0
 ENABLE_GPROF := 0
-ENABLE_DEBUG := 0
+ENABLE_DEBUG := 1
 ENABLE_LTO := 0
 ENABLE_CCACHE := 0
 # sccache is not always a drop-in replacement for ccache in practice
@@ -41,7 +41,7 @@ ENABLE_SCCACHE := 0
 ENABLE_FUNCTIONAL_TESTS := 0
 LINK_CURSES := 0
 LINK_TERMCAP := 0
-LINK_ABC := 0
+LINK_ABC := 1
 # Needed for environments that can't run executables (i.e. emscripten, wasm)
 DISABLE_SPAWN := 0
 # Needed for environments that don't have proper thread support (i.e. emscripten, wasm--for now)
@@ -592,6 +592,7 @@ S =
 endif
 
 $(eval $(call add_include_file,database/database.h))
+$(eval $(call add_include_file,kernel/rtlil_util.h))
 
 $(eval $(call add_include_file,kernel/binding.h))
 $(eval $(call add_include_file,kernel/bitpattern.h))
@@ -639,6 +640,9 @@ $(eval $(call add_include_file,frontends/ast/ast.h))
 $(eval $(call add_include_file,frontends/ast/ast_binding.h))
 $(eval $(call add_include_file,frontends/blif/blifparse.h))
 $(eval $(call add_include_file,backends/rtlil/rtlil_backend.h))
+
+
+OBJS += kernel/rtlil_util.o
 
 OBJS += kernel/driver.o kernel/register.o kernel/rtlil.o kernel/log.o kernel/calc.o kernel/yosys.o
 OBJS += kernel/binding.o
@@ -723,6 +727,8 @@ endif
 include $(YOSYS_SRC)/database/Makefile.inc
 
 ifeq ($(LINK_ABC),1)
+CXXFLAGS += -Iabc/src
+CXXFLAGS += -DLIN64
 OBJS += $(PROGRAM_PREFIX)yosys-libabc.a
 endif
 

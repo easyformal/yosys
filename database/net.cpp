@@ -23,6 +23,11 @@ Module *Net::module() const
     return _module;
 }
 
+void Net::setModule(Module *module)
+{
+    _module = module;
+}
+
 bool Net::isSigned() const
 {
     return _isSigned;
@@ -70,4 +75,8 @@ Module *NetBus::module() const
     return _module;
 }
 
+void NetBus::setModule(Module *module)
+{
+    _module = module;
+}
 }
